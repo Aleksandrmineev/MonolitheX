@@ -1,0 +1,9 @@
+*.txt
+# Node.js
+node_modules/
+
+# Mac OS
+.DS_Store
+
+# Layout (если ты не хочешь пушить layout)
+layout/
