@@ -1,0 +1,75 @@
+.hero__form {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+  padding: 24px 24px 16px;
+  box-shadow: var(--shadow-default);
+  border: 1px solid var(--clr-border-alt);
+  border-radius: var(--radius-main);
+  background-color: var(--clr-bg);
+  gap: 12px;
+}
+
+.form__title {
+  margin: 0;
+  padding: 8px;
+  font-family: var(--font-family-alt);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.hero__form input[type='text'],
+.hero__form input[type='tel'],
+.hero__form input[type='email'] {
+  padding: 12px;
+  border: 1px solid var(--clr-border);
+  border-radius: 10px;
+  font-size: var(--fs-body);
+}
+
+.form__agreement {
+  display: flex;
+  align-items: center;
+  color: var(--clr-text-muted);
+  font-size: clamp(10px, 12px, 12px);
+  gap: 8px;
+}
+
+.form__agreement a.form__link {
+  transition: color 0.2s ease;
+  color: var(--clr-text-muted);
+  font-size: inherit;
+  text-decoration: underline;
+}
+
+.form__agreement a.form__link:hover {
+  color: var(--clr-text-main);
+}
+
+.form__submit {
+  height: var(--btn-height);
+  padding: var(--btn-padding);
+  border: none;
+  border-radius: 10px;
+  background-color: var(--btn-color);
+  color: var(--btn-color-white);
+  font-size: var(--fs-btn);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form__report-link {
+  display: inline-block;
+  margin-top: 12px;
+  transition: color 0.2s ease;
+  color: var(--clr-text-muted);
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.form__report-link:hover {
+  color: var(--clr-text-main);
+}

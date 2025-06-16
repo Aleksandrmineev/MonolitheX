@@ -2,10 +2,10 @@
 /* stylelint-disable selector-class-pattern */
 .header__container {
   position: relative;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
   padding: 20px;
   box-shadow: var(--shadow-default);
   border-radius: var(--radius-main);
@@ -51,6 +51,7 @@
 }
 
 .header__location-toggle {
+  z-index: 5;
   display: grid;
   justify-content: start;
   align-items: center;

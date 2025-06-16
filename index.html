@@ -37,10 +37,17 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Галерея -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    />
   </head>
 
   <body>
     <div class="wrapper">
+      <!-- ХЕДЕР ВКЛЮЧАЕТ В СЕБЯ БЛОК МЕНЮ С ВЫПАДАЮЩИМИ СПИСКАМИ И ВЫБОР ГОРОДА -->
       <header class="header">
         <div class="container">
           <div class="header__container">
@@ -199,22 +206,891 @@
       </header>
 
       <main>
+        <!-- ГЛАВНЫЙ ЭКРАН -->
         <section class="hero">
+          <section class="hero">
+            <div class="container hero__container">
+              <div class="hero__content">
+                <h1 class="hero__title">
+                  Проектирование зданий и сооружений<br />
+                  из монолитного железобетона
+                </h1>
+                <p class="hero__tags">
+                  <a href="#">Разработка КР</a> | <a href="#">КЖ</a> |
+                  <a href="#">КМ</a>
+                </p>
+
+                <form class="hero__form">
+                  <h3 class="form__title">Связаться с нами</h3>
+                  <input type="text" placeholder="Имя" name="name" required />
+                  <input
+                    type="tel"
+                    placeholder="Телефон"
+                    name="phone"
+                    required
+                  />
+                  <input
+                    type="email"
+                    placeholder="E-mail"
+                    name="email"
+                    required
+                  />
+                  <label class="form__agreement">
+                    <input type="checkbox" required />
+                    Нажимая на кнопку, я принимаю условия
+                    <a href="/policy" target="_blank" class="form__link"
+                      >соглашения</a
+                    >.
+                  </label>
+                  <button type="submit" class="button button-primary">
+                    <span class="button__text">Отправить</span>
+                  </button>
+                  <a href="#" class="form__report-link">Сообщить о нарушении</a>
+                </form>
+              </div>
+
+              <div class="hero__image-wrapper">
+                <img
+                  src="img/content/logobig.png"
+                  alt="Специалист"
+                  class="hero__image"
+                />
+              </div>
+            </div>
+          </section>
+        </section>
+        <!-- ПРЕИМУЩЕСТВА -->
+        <section class="advantages">
           <div class="container">
-            <div
-              class="block"
-              style="
-                width: 100%;
-                height: 600px;
-                background-color: var(--clr-bg-light);
-              "
-            ></div>
+            <h2 class="advantages__title">Наши технические преимущества</h2>
+            <div class="advantages__grid">
+              <div class="advantage-item card-hover">
+                <img
+                  src="img/icon/advantages/icon1.svg"
+                  alt=""
+                  class="advantage-item__icon"
+                />
+                <p class="advantage-item__text">
+                  Более 10 лет опыта проектирования
+                </p>
+              </div>
+              <div class="advantage-item card-hover">
+                <img
+                  src="img/icon/advantages/icon2.svg"
+                  alt=""
+                  class="advantage-item__icon"
+                />
+                <p class="advantage-item__text">
+                  Спроектировано более 500 объектов
+                </p>
+              </div>
+              <div class="advantage-item card-hover">
+                <img
+                  src="img/icon/advantages/icon3.svg"
+                  alt=""
+                  class="advantage-item__icon"
+                />
+                <p class="advantage-item__text">
+                  Работаем по всей территории РФ
+                </p>
+              </div>
+              <div class="advantage-item card-hover">
+                <img
+                  src="img/icon/advantages/icon4.svg"
+                  alt=""
+                  class="advantage-item__icon"
+                />
+                <p class="advantage-item__text">
+                  Индивидуальное ценообразование
+                </p>
+              </div>
+              <div class="advantage-item card-hover">
+                <img
+                  src="img/icon/advantages/icon5.svg"
+                  alt=""
+                  class="advantage-item__icon"
+                />
+                <p class="advantage-item__text">
+                  Проектирование всех стадий и разделов любой сложности
+                </p>
+              </div>
+              <div class="advantage-item card-hover">
+                <img
+                  src="img/icon/advantages/icon6.svg"
+                  alt=""
+                  class="advantage-item__icon"
+                />
+                <p class="advantage-item__text">
+                  Имеем сертификаты, лицензии и допуски
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- УСЛУГИ -->
+        <section class="services">
+          <div class="container">
+            <!-- Заголовок на сером фоне -->
+            <div class="services__title-block">
+              <h2 class="services__title">
+                Monolithex – предоставляет большой пакет услуг<br />
+                по проектированию высотных зданий из монолитного железобетона
+              </h2>
+            </div>
+
+            <!-- Сетка карточек -->
+            <div class="services__grid">
+              <!-- Карточка услуги -->
+              <div class="service-card card-hover">
+                <h3 class="service-card__title">Разработка КЖ</h3>
+                <div class="service-card__info">
+                  <div class="info__row">
+                    <span class="info__label">Цена:</span>
+                    <span class="info__value">от 15.000 руб.</span>
+                  </div>
+                  <div class="info__row">
+                    <span class="info__label">Сроки:</span>
+                    <span class="info__value">до 14 дней</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="service-card card-hover">
+                <h3 class="service-card__title">Разработка КР</h3>
+                <div class="service-card__info">
+                  <div class="info__row">
+                    <span class="info__label">Цена:</span>
+                    <span class="info__value">от 15.000 руб.</span>
+                  </div>
+                  <div class="info__row">
+                    <span class="info__label">Сроки:</span>
+                    <span class="info__value">до 14 дней</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="service-card card-hover">
+                <h3 class="service-card__title">Разработка АР</h3>
+                <div class="service-card__info">
+                  <div class="info__row">
+                    <span class="info__label">Цена:</span>
+                    <span class="info__value">от 15.000 руб.</span>
+                  </div>
+                  <div class="info__row">
+                    <span class="info__label">Сроки:</span>
+                    <span class="info__value">до 14 дней</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="service-card card-hover">
+                <h3 class="service-card__title">Разработка КМ</h3>
+                <div class="service-card__info">
+                  <div class="info__row">
+                    <span class="info__label">Цена:</span>
+                    <span class="info__value">от 15.000 руб.</span>
+                  </div>
+                  <div class="info__row">
+                    <span class="info__label">Сроки:</span>
+                    <span class="info__value">до 14 дней</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ПОРТФОЛИО -->
+        <section class="portfolio section">
+          <div class="container">
+            <!-- Заголовок и кнопка -->
+            <div class="portfolio__header">
+              <h2 class="portfolio__title">Наши проекты</h2>
+              <a href="/projects" class="button button-secondary">
+                <span class="button__text">Все проекты</span>
+              </a>
+            </div>
+
+            <!-- Сетка проектов -->
+            <div class="portfolio__grid">
+              <div class="project-card">
+                <!-- Основное содержимое карточки -->
+                <div class="project-card__body">
+                  <div class="project-card__image-wrapper">
+                    <!-- Логотип + название -->
+                    <div class="project-card__label">
+                      <img
+                        src="img/icon/logo.png"
+                        alt="MonolitheX"
+                        class="project-card__logo"
+                      />
+                      <span class="project-card__brand">MonolitheX</span>
+                    </div>
+                    <img
+                      src="img/content/portfolio/img1.png"
+                      alt="Многоэтажный дом"
+                      class="project-card__image"
+                    />
+                  </div>
+                  <h3 class="project-card__title">
+                    МНОГОЭТАЖНЫЙ ЖИЛОЙ ДОМ<br />
+                    С ПОДЗЕМНЫМ ПАРКИНГОМ
+                  </h3>
+                  <a href="#" class="portfolio-card__btn button button-primary">
+                    <span class="button__text">Подробнее</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Карточка портфолио -->
+              <div class="project-card">
+                <!-- Основное содержимое карточки -->
+                <div class="project-card__body">
+                  <div class="project-card__image-wrapper">
+                    <!-- Логотип + название -->
+                    <div class="project-card__label">
+                      <img
+                        src="img/icon/logo.png"
+                        alt="MonolitheX"
+                        class="project-card__logo"
+                      />
+                      <span class="project-card__brand">MonolitheX</span>
+                    </div>
+                    <img
+                      src="img/content/portfolio/img1.png"
+                      alt="Многоэтажный дом"
+                      class="project-card__image"
+                    />
+                  </div>
+                  <h3 class="project-card__title">
+                    МНОГОЭТАЖНЫЙ ЖИЛОЙ ДОМ <br />
+                    С ПОДЗЕМНЫМ ПАРКИНГОМ
+                  </h3>
+                  <a href="#" class="portfolio-card__btn button button-primary">
+                    <span class="button__text">Подробнее</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Карточка портфолио -->
+              <div class="project-card">
+                <!-- Основное содержимое карточки -->
+                <div class="project-card__body">
+                  <div class="project-card__image-wrapper">
+                    <!-- Логотип + название -->
+                    <div class="project-card__label">
+                      <img
+                        src="img/icon/logo.png"
+                        alt="MonolitheX"
+                        class="project-card__logo"
+                      />
+                      <span class="project-card__brand">MonolitheX</span>
+                    </div>
+                    <img
+                      src="img/content/portfolio/img1.png"
+                      alt="Многоэтажный дом"
+                      class="project-card__image"
+                    />
+                  </div>
+                  <h3 class="project-card__title">башня рлс</h3>
+                  <a href="#" class="portfolio-card__btn button button-primary">
+                    <span class="button__text">Подробнее</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Карточка портфолио -->
+              <div class="project-card">
+                <!-- Основное содержимое карточки -->
+                <div class="project-card__body">
+                  <div class="project-card__image-wrapper">
+                    <!-- Логотип + название -->
+                    <div class="project-card__label">
+                      <img
+                        src="img/icon/logo.png"
+                        alt="MonolitheX"
+                        class="project-card__logo"
+                      />
+                      <span class="project-card__brand">MonolitheX</span>
+                    </div>
+                    <img
+                      src="img/content/portfolio/img1.png"
+                      alt="Многоэтажный дом"
+                      class="project-card__image"
+                    />
+                  </div>
+                  <h3 class="project-card__title">
+                    Многоэтажный жилой дом <br />
+                    с подземным паркингом
+                  </h3>
+                  <a href="#" class="portfolio-card__btn button button-primary">
+                    <span class="button__text">Подробнее</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Карточка портфолио -->
+              <div class="project-card">
+                <!-- Основное содержимое карточки -->
+                <div class="project-card__body">
+                  <div class="project-card__image-wrapper">
+                    <!-- Логотип + название -->
+                    <div class="project-card__label">
+                      <img
+                        src="img/icon/logo.png"
+                        alt="MonolitheX"
+                        class="project-card__logo"
+                      />
+                      <span class="project-card__brand">MonolitheX</span>
+                    </div>
+                    <img
+                      src="img/content/portfolio/img1.png"
+                      alt="Многоэтажный дом"
+                      class="project-card__image"
+                    />
+                  </div>
+                  <h3 class="project-card__title">
+                    Многофункциональный центр <br />
+                    с 2-х этажным паркингом
+                  </h3>
+                  <a href="#" class="portfolio-card__btn button button-primary">
+                    <span class="button__text">Подробнее</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Карточка портфолио -->
+              <div class="project-card">
+                <!-- Основное содержимое карточки -->
+                <div class="project-card__body">
+                  <div class="project-card__image-wrapper">
+                    <!-- Логотип + название -->
+                    <div class="project-card__label">
+                      <img
+                        src="img/icon/logo.png"
+                        alt="MonolitheX"
+                        class="project-card__logo"
+                      />
+                      <span class="project-card__brand">MonolitheX</span>
+                    </div>
+                    <img
+                      src="img/content/portfolio/img1.png"
+                      alt="Многоэтажный дом"
+                      class="project-card__image"
+                    />
+                  </div>
+                  <h3 class="project-card__title">укрытия резервуаров</h3>
+                  <a href="#" class="portfolio-card__btn button button-primary">
+                    <span class="button__text">Подробнее</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- ... повторить еще 5 карточек -->
+            </div>
+          </div>
+        </section>
+
+        <!-- КАЛЬКУЛЯТОР -->
+        <section class="calc-section">
+          <div class="container calc-section__container">
+            <div class="calc-section__grid">
+              <!-- Левая часть — калькулятор -->
+              <div class="calc-block">
+                <h3 class="calc-block__title">Калькулятор стоимости проекта</h3>
+
+                <!-- Виды работ -->
+                <label class="calc-block__label" for="workType"
+                  >Виды работ</label
+                >
+                <div class="calc-block__select-wrapper">
+                  <select id="workType" class="calc-block__select">
+                    <option value="km">Разработка чертежей КМ</option>
+                    <option value="kmd">Разработка чертежей КМД</option>
+                    <option value="ar">Разработка АР</option>
+                  </select>
+                  <span class="calc-block__select-arrow">&#9662;</span>
+                </div>
+
+                <!-- Кол-во листов -->
+                <label class="calc-block__label" for="sheetsRange"
+                  >Кол-во листов по КМ:</label
+                >
+                <div class="calc-block__range-group">
+                  <input
+                    type="range"
+                    class="calc-range"
+                    id="sheetsRange"
+                    min="1"
+                    max="100"
+                    value="10"
+                  />
+                  <input
+                    type="number"
+                    id="sheetsInput"
+                    min="1"
+                    max="100"
+                    value="10"
+                  />
+                </div>
+
+                <!-- Кол-во тонн -->
+                <label class="calc-block__label" for="tonsRange"
+                  >Кол-во тонн по КМ:</label
+                >
+                <div class="calc-block__range-group">
+                  <input
+                    type="range"
+                    class="calc-range"
+                    id="tonsRange"
+                    min="1"
+                    max="1000"
+                    value="500"
+                  />
+                  <input
+                    type="number"
+                    id="tonsInput"
+                    min="1"
+                    max="1000"
+                    value="500"
+                  />
+                </div>
+
+                <!-- Цена и кнопка -->
+                <div class="calc-block__price">Цена за тонну: 500 руб</div>
+                <button class="button button-primary" id="calcSubmit">
+                  <span class="button__text">Рассчитать</span>
+                </button>
+                <!-- Итог и формула -->
+                <div
+                  class="calc-block__result"
+                  id="calcResult"
+                  style="margin-top: 16px"
+                >
+                  <p class="calc-result__formula">
+                    Формула: (тонны × ставка) + (листы × ставка)
+                  </p>
+                  <p class="calc-result__total">
+                    Итоговая стоимость: <strong id="calcTotal">0 руб.</strong>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Правая часть — оставлена пустой -->
+              <div class="calc-section__image-placeholder"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- СЕРТИФИКАТЫ -->
+        <section class="certificates section">
+          <div class="container">
+            <h2 class="certificates__title">Сертификаты</h2>
+            <div class="certificates__grid" id="lightgallery">
+              <a
+                class="certificate card-hover certificate-link"
+                href="img/content/certificate/letter1.png"
+              >
+                <img
+                  src="img/content/certificate/letter1.png"
+                  alt="Сертификат 1"
+                />
+              </a>
+              <a
+                class="certificate card-hover certificate-link"
+                href="img/content/certificate/letter2.png"
+              >
+                <img
+                  src="img/content/certificate/letter2.png"
+                  alt="Сертификат 2"
+                />
+              </a>
+              <a
+                class="certificate card-hover certificate-link"
+                href="img/content/certificate/letter3.png"
+              >
+                <img
+                  src="img/content/certificate/letter3.png"
+                  alt="Сертификат 3"
+                />
+              </a>
+              <a
+                class="certificate card-hover certificate-link"
+                href="img/content/certificate/letter4.png"
+              >
+                <img
+                  src="img/content/certificate/letter4.png"
+                  alt="Сертификат 4"
+                />
+              </a>
+              <a
+                class="certificate card-hover certificate-link"
+                href="img/content/certificate/letter5.png"
+              >
+                <img
+                  src="img/content/certificate/letter5.png"
+                  alt="Сертификат 5"
+                />
+              </a>
+              <a
+                class="certificate card-hover certificate-link"
+                href="img/content/certificate/letter6.png"
+              >
+                <img
+                  src="img/content/certificate/letter6.png"
+                  alt="Сертификат 6"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ТРЕБОВАНИЯ -->
+        <section class="custom-projects">
+          <div class="container">
+            <div class="custom-projects__card">
+              <div class="custom-projects__grid">
+                <!-- Левая колонка -->
+                <div class="custom-projects__text">
+                  <h3 class="custom-projects__title">
+                    Нестандартные проекты<br />под ваши требования
+                  </h3>
+                  <p class="custom-projects__subtitle">
+                    Какие мы делаем проекты:
+                  </p>
+                  <ul class="custom-projects__list">
+                    <li>Проектирование инженерных систем и сетей.</li>
+                    <li>Проектирование зданий гостиниц.</li>
+                    <li>Проектирование и расчёт деревянных конструкций.</li>
+                    <li>
+                      Проектирование бетонных и железобетонных конструкций.
+                    </li>
+                    <li>Проектирование объектов производства.</li>
+                    <li>Проектирование объектов капитального строительства.</li>
+                    <li>Проектирование складов хранения.</li>
+                    <li>BIM проектирование зданий.</li>
+                  </ul>
+                  <div class="custom-projects__buttons">
+                    <a href="#" class="button button-secondary">
+                      <span class="button__text">Портфолио</span>
+                    </a>
+                    <a href="#" class="button button-primary">
+                      <span class="button__text">Заказать проект</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Правая колонка -->
+                <div class="custom-projects__image">
+                  <img
+                    src="img/content/trebovaniya.png"
+                    alt="3D модель здания"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ПАРТНЕРЫ -->
+        <section class="trust section">
+          <div class="container">
+            <h2 class="trust__title">Нам доверяют</h2>
+            <div class="trust__grid">
+              <div class="trust__item">
+                <img src="img/icon/partners/partner1.png" alt="Газпром" />
+              </div>
+              <div class="trust__item">
+                <img src="img/icon/partners/partner2.png" alt="Алроса" />
+              </div>
+              <div class="trust__item">
+                <img src="img/icon/partners/partner3.png" alt="Bergauf" />
+              </div>
+              <div class="trust__item">
+                <img src="img/icon/partners/partner4.png" alt="ПИК" />
+              </div>
+              <div class="trust__item">
+                <img src="img/icon/partners/partner5.png" alt="Евроцемент" />
+              </div>
+              <div class="trust__item trust__item--green">
+                <span>+ 800<br />компаний</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- СЕКЦИЯ С ФОРМОЙ -->
+        <section class="form-section">
+          <div class="container form-section__container">
+            <div class="form-section__grid">
+              <!-- Левая часть — форма -->
+              <div class="form-block">
+                <h3 class="form-block__title"></h3>
+
+                <form class="hero__form">
+                  <h3 class="form__title">Связаться с нами</h3>
+                  <input type="text" placeholder="Имя" name="name" required />
+                  <input
+                    type="tel"
+                    placeholder="Телефон"
+                    name="phone"
+                    required
+                  />
+                  <input
+                    type="email"
+                    placeholder="E-mail"
+                    name="email"
+                    required
+                  />
+                  <label class="form__agreement">
+                    <input type="checkbox" required />
+                    Нажимая на кнопку, я принимаю условия
+                    <a href="/policy" target="_blank" class="form__link"
+                      >соглашения</a
+                    >.
+                  </label>
+                  <button type="submit" class="button button-primary">
+                    <span class="button__text">Отправить</span>
+                  </button>
+                  <a href="#" class="form__report-link">Сообщить о нарушении</a>
+                </form>
+              </div>
+
+              <!-- Правая часть — placeholder для картинки -->
+              <div class="form-section__image-placeholder"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- СЕРВИС -->
+        <section class="services section">
+          <div class="container">
+            <h2 class="services__title">Реализация проектов и сервис</h2>
+            <div class="services__grid">
+              <div class="service-card card-hover">
+                <p class="service-card__meta">
+                  <strong>01:</strong> 2–4 недели
+                </p>
+                <h3 class="service-card__title">
+                  Консультация проектного инженера:
+                </h3>
+                <ul class="service-card__list">
+                  <li>Изучение текущей проектной документации</li>
+                  <li>Устранение «узких мест» или ошибок в проекте</li>
+                  <li>Оптимизация проектных решений</li>
+                </ul>
+              </div>
+
+              <div class="service-card card-hover">
+                <p class="service-card__meta">
+                  <strong>02:</strong> 1–1,5 месяца
+                </p>
+                <h3 class="service-card__title">
+                  Собственное конструкторское бюро разработает для вас:
+                </h3>
+                <ul class="service-card__list">
+                  <li>Технический проект</li>
+                  <li>3D макет</li>
+                  <li>Сборные чертежи монолитных конструкций</li>
+                </ul>
+              </div>
+
+              <div class="service-card card-hover">
+                <p class="service-card__meta">
+                  <strong>03:</strong> 2–4 недели
+                </p>
+                <h3 class="service-card__title">Передача документации</h3>
+                <ul class="service-card__list">
+                  <li>Согласование и корректировка</li>
+                  <li>
+                    Финальная версия чертежей для передачи подрядчикам и
+                    строителям
+                  </li>
+                </ul>
+              </div>
+
+              <div class="service-card card-hover service-card--green">
+                <p class="service-card__meta">04<br />Сервис</p>
+                <div class="service-card__split">
+                  <ul class="service-card__list">
+                    <li>Техническое сопровождение</li>
+                    <li>2 года гарантии</li>
+                    <li>Разработка под ключ</li>
+                  </ul>
+                  <ul class="service-card__list">
+                    <li>
+                      <span>Дополнительные услуги</span><br />
+                      <span class="service-card__note"
+                        >При запросах клиента на меняющихся действующих
+                        технологических процессов</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- АККОРДЕОН ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ-->
+        <section
+          class="faq section"
+          style="background-color: var(--clr-bg-light)"
+        >
+          <div class="container">
+            <div class="card-hover2">
+              <h2 class="faq__title">Часто задаваемые вопросы</h2>
+              <div class="faq__accordion">
+                <div class="accordion-item">
+                  <button class="accordion-header">
+                    Какие исходные данные необходимы для начала проектирования?
+                    <span class="accordion-icon">
+                      <svg
+                        width="20"
+                        height="15"
+                        viewBox="0 0 20 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.4 13.8667L0.4 3.2C-0.588854 1.88153 0.35191 0 2 0H18C19.6481 0 20.5889 1.88153 19.6 3.2L11.6 13.8667C10.8 14.9333 9.2 14.9333 8.4 13.8667Z"
+                          fill="#18B75C"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="accordion-content">
+                    <p>Для проектирования нужны:</p>
+                    <ul>
+                      <li>Архитектурные чертежи или эскизы.</li>
+                      <li>Геодезические и геологические данные участка.</li>
+                      <li>
+                        Техническое задание с указанием требований к проекту.
+                      </li>
+                      <li>Нагрузки и эксплуатационные условия.</li>
+                      <li>
+                        Нормативные ограничения (климатические, сейсмические).
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <button class="accordion-header">
+                    Можно ли внести изменения в проект после его разработки?
+                    <span class="accordion-icon">
+                      <svg
+                        width="20"
+                        height="15"
+                        viewBox="0 0 20 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.4 13.8667L0.4 3.2C-0.588854 1.88153 0.35191 0 2 0H18C19.6481 0 20.5889 1.88153 19.6 3.2L11.6 13.8667C10.8 14.9333 9.2 14.9333 8.4 13.8667Z"
+                          fill="#18B75C"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="accordion-content">
+                    <p>
+                      Да, возможны правки с учётом стадии разработки и
+                      согласования.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <button class="accordion-header">
+                    Какие нормативные документы используются при проектировании?
+                    <span class="accordion-icon">
+                      <svg
+                        width="20"
+                        height="15"
+                        viewBox="0 0 20 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.4 13.8667L0.4 3.2C-0.588854 1.88153 0.35191 0 2 0H18C19.6481 0 20.5889 1.88153 19.6 3.2L11.6 13.8667C10.8 14.9333 9.2 14.9333 8.4 13.8667Z"
+                          fill="#18B75C"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="accordion-content">
+                    <p>
+                      СНиП, СП, ГОСТ и другие действующие регламенты в
+                      строительстве.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <button class="accordion-header">
+                    В каких регионах вы работаете?
+                    <span class="accordion-icon">
+                      <svg
+                        width="20"
+                        height="15"
+                        viewBox="0 0 20 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.4 13.8667L0.4 3.2C-0.588854 1.88153 0.35191 0 2 0H18C19.6481 0 20.5889 1.88153 19.6 3.2L11.6 13.8667C10.8 14.9333 9.2 14.9333 8.4 13.8667Z"
+                          fill="#18B75C"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="accordion-content">
+                    <p>
+                      Работаем по всей России и в странах ближнего зарубежья.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <button class="accordion-header">
+                    Какое программное обеспечение используется для
+                    проектирования?
+                    <span class="accordion-icon">
+                      <svg
+                        width="20"
+                        height="15"
+                        viewBox="0 0 20 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.4 13.8667L0.4 3.2C-0.588854 1.88153 0.35191 0 2 0H18C19.6481 0 20.5889 1.88153 19.6 3.2L11.6 13.8667C10.8 14.9333 9.2 14.9333 8.4 13.8667Z"
+                          fill="#18B75C"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="accordion-content">
+                    <p>Revit, AutoCAD, SCAD, LIRA и другие BIM/САПР-системы.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
 
       <footer class="section footer"></footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+      const lightbox = GLightbox({
+        selector: '.certificate-link',
+      });
+    </script>
+    <script src="js/faq.js"></script>
+    <script src="js/calc.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

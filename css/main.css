@@ -1,25 +1,792 @@
-#messages {
-  max-width: 800px;
-  margin: 0 auto; /* Центрирует блок по горизонтали */
+/* stylelint-disable no-duplicate-selectors */
+
+/* СЕКЦИЯ ПРЕИМУЩЕСТВА */
+/* stylelint-disable selector-class-pattern */
+
+.advantages__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.advantage-item {
+  display: flex;
+  align-items: center;
   padding: 20px;
-  text-align: left; /* Контент внутри прижат влево */
+  border: 1px solid var(--clr-border-alt);
+  border-radius: var(--radius-main);
+  background-color: var(--clr-bg);
+  gap: 16px;
 }
 
-#messages .message {
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background: #f9f9f9;
-  color: #473d2a;
-  font-family: sans-serif;
-  line-height: 1.5;
+.advantage-item__icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
 }
 
-h2 {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-family: sans-serif;
-  font-size: 28px;
-  text-align: center; /* Сам заголовок по центру */
+.advantage-item__text {
+  color: var(--clr-text-main);
+  font-size: var(--fs-body);
+  line-height: var(--lh-150);
+}
+
+/* СЕКЦИЯ УСЛУГИ */
+
+/* .services__title-block — обёртка серого фона с закруглениями.
+.services__grid — грид или флекс-сетка из 4 карточек.
+.service-card — отдельная карточка.
+.info__row — строка с двумя элементами: слева и справа. */
+
+.services__title-block {
+  margin-bottom: 40px;
+  padding: 32px 24px;
+  border-radius: var(--radius-main);
+  background-color: var(--clr-bg-light);
+  text-align: center;
+}
+
+.services__title {
+  color: var(--clr-text-accent);
+  font-family: var(--font-family-alt);
+  font-size: var(--fs-accent-big);
+  font-weight: 700;
+  line-height: var(--lh-150);
+  text-transform: uppercase;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Карточка услуг */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 24px;
+  box-shadow: var(--shadow-default);
+  border: 1px solid var(--clr-border-alt);
+  border-radius: var(--radius-main);
+  background-color: var(--clr-bg);
+  text-align: left;
+  gap: 16px;
+}
+
+.service-card__title {
+  margin-bottom: 12px;
+  color: var(--clr-text-main);
+  font-family: var(--font-family-alt);
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.service-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info__row {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-body);
+  line-height: var(--lh-150);
+}
+
+.info__label {
+  color: var(--clr-text-main);
+  font-weight: 500;
+}
+
+.info__value {
+  color: var(--clr-text-accent);
+  font-weight: 600;
+}
+
+/* СЕКЦИЯ ПОРТФОЛИО */
+
+.portfolio__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.portfolio__title {
+  color: var(--clr-text-main);
+  font-family: var(--font-family-alt);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+}
+
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* карточка проекта */
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  border: 1px solid var(--clr-border-alt);
+  border-radius: var(--radius-main);
+  background-color: var(--clr-bg);
+  gap: 16px;
+}
+
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 12px;
+}
+
+/* Лого */
+.project-card__label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: var(--radius-main);
+  background-color: rgb(255 255 255 / 85%); /* опционально — светлая подложка */
+  color: var(--clr-text-main);
+  font-size: var(--fs-body-small);
+  font-weight: 600;
+  gap: 8px;
+}
+
+.project-card__logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Картинка */
+.project-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-main);
+  background-color: var(--clr-bg-light);
+  aspect-ratio: 322 / 200;
+}
+
+.project-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Текст */
+.project-card__title {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  color: var(--clr-text-main);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: var(--lh-120);
+  text-transform: uppercase;
+}
+
+.portfolio-card__btn {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* СЕКЦИЯ КАЛЬКУЛЯТОР */
+
+.calc-section__container {
+  position: relative;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  border: 1px solid var(--clr-border-alt);
+  border-radius: var(--radius-main);
+  background-image: url('../img/content/tower-calc.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.calc-section__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* БЛОК КАЛЬКУЛЯТОРА */
+.calc-block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 468px;
+  padding: 24px;
+  box-shadow: var(--shadow-default);
+  border: 1px solid var(--clr-border-alt);
+  border-radius: var(--radius-main);
+  background-color: var(--clr-bg);
+  gap: 20px;
+}
+
+.calc-block__title {
+  color: var(--clr-text-main);
+  font-family: var(--font-family-alt);
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Выпадающий список */
+.calc-block__label {
+  color: var(--clr-text-main);
+  font-size: var(--fs-body);
+  font-weight: 600;
+}
+
+.calc-block__select-wrapper {
+  position: relative;
+}
+
+.calc-block__select {
+  width: 100%;
+  padding: 10px 40px 10px 12px;
+  background-color: var(--clr-bg);
+  font-size: var(--fs-body);
+  appearance: none;
+}
+
+.calc-block__select-arrow {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  color: var(--clr-text-muted);
+  font-size: 26px;
+  pointer-events: none;
+}
+
+/* Инпуты */
+.calc-block__range-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.calc-block__range-group input[type='range'] {
+  flex: 1;
+  cursor: pointer;
+  accent-color: var(--clr-primary);
+}
+
+.calc-block__range-group input[type='number'] {
+  width: 80px;
+  padding: 8px;
+  font-size: var(--fs-body);
+}
+
+/* Кастомный ползунок */
+.calc-range {
+  width: 100%;
+  height: 5px;
+  border-radius: 2px;
+  background-color: #ddd;
+  appearance: none;
+  outline: none;
+}
+
+/* Chrome / Safari */
+.calc-range::-webkit-slider-thumb {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: url('../img/icon/arrowcalc.svg') no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+  appearance: none;
+}
+
+/* Firefox */
+.calc-range::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: url('../img/icon/arrowcalc.svg') no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+/* Цена и кнопка */
+.calc-block__price {
+  color: var(--clr-text-main);
+  font-family: var(--font-family-alt);
+  font-size: var(--fs-h4);
+  font-weight: 600;
+}
+
+/* адаптив */
+@media (width <= 768px) {
+  .calc-section__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Итог */
+.calc-block__result {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.calc-block__result.is-visible {
+  max-height: 300px; /* достаточно для контента */
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* СЕКЦИЯ СЕРТИФИКАТЫ */
+.certificates {
+  padding-block: var(--section-padding-y, 40px);
+}
+
+.certificates__title {
+  margin-bottom: 32px;
+  color: var(--clr-text-main);
+  font-family: var(--font-family-alt);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+}
+
+.certificates__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* по умолчанию — 3 */
+  gap: 24px;
+}
+
+@media (width <= 899px) {
+  .certificates__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 599px) {
+  .certificates__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* карточка сертификата */
+.certificate {
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-default);
+  border-radius: var(--radius-main);
+  background-color: var(--clr-bg);
+}
+
+.certificate img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 4.25;
+  object-fit: cover;
+}
+
+/* СЕКЦИЯ ТРЕБОВАНИЯ */
+.custom-projects {
+  background-color: var(--clr-bg-light);
+  padding-block: var(--section-padding-y, 40px);
+}
+
+.custom-projects__card {
+  padding: 32px;
+  box-shadow: var(--shadow-default);
+  border: 1px solid var(--clr-border-alt);
+  border-radius: var(--radius-main);
+  background-color: var(--clr-bg);
+}
+
+.custom-projects__grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+}
+
+.custom-projects__title {
+  margin-bottom: 16px;
+  color: var(--clr-text-main);
+  font-family: var(--font-family-alt);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.custom-projects__subtitle {
+  margin-bottom: 12px;
+  color: var(--clr-primary);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.custom-projects__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 24px;
+  padding: 0;
+  font-size: var(--fs-body);
+  gap: 8px;
+  list-style: none;
+}
+
+.custom-projects__list {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.custom-projects__list li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.custom-projects__list li::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--clr-text-main);
+  content: '';
+  flex-shrink: 0;
+}
+
+.custom-projects__buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.custom-projects__buttons .button {
+  flex: 1 1 0;
+  width: 100%;
+}
+
+.custom-projects__image img {
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  border-radius: var(--radius-main);
+  object-fit: cover;
+  object-position: center;
+}
+
+/* СЕКЦИЯ НАМ ДОВЕРЯЮТ */
+
+.trust__title {
+  margin-top: 60px;
+  margin-bottom: 32px;
+  color: var(--clr-text-main);
+  font-family: var(--font-family-alt);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+}
+
+.trust__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* строго 3 колонки */
+  margin-bottom: 40px;
+  gap: 24px;
+}
+
+@media (width <= 900px) {
+  .trust__grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+  }
+}
+
+@media (width <= 600px) {
+  .trust__grid {
+    grid-template-columns: 1fr; /* 1 колонка на телефонах */
+  }
+}
+
+.trust__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 96px;
+  padding: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-default);
+  border-radius: var(--radius-main);
+  background-color: var(--clr-bg-light);
+}
+
+.trust__item:hover {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.trust__item img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.trust__item--green {
+  padding: 24px;
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  font-family: var(--font-family-alt);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+/* СЕКЦИЯ С ФОРМОЙ */
+.form-section__container {
+  padding: 40px 20px;
+  border: 1px solid var(--clr-border-alt);
+  border-radius: var(--radius-main);
+  background-image: url('../img/content/towerform.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* СЕКЦИЯ СЕРВИС */
+.services {
+  padding-block: var(--section-padding-y, 40px);
+}
+
+.services__title {
+  margin-bottom: 32px;
+  color: var(--clr-text-main);
+  font-family: var(--font-family-alt);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  transition: var(--transition-default, all 0.3s ease);
+  box-shadow: var(--shadow-default);
+  border-radius: var(--radius-main);
+  background-color: var(--clr-bg);
+}
+
+.service-card__meta {
+  /* margin-bottom: 12px; */
+  color: var(--clr-primary);
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.service-card__title {
+  /* margin-bottom: 12px; */
+  color: var(--clr-text-main);
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.service-card__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+  list-style: none;
+}
+
+.service-card__list li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.service-card__list li::before {
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--clr-text-main);
+  content: '';
+}
+
+/* зеленая карточка */
+.service-card--green {
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+}
+
+.service-card--green .service-card__title,
+.service-card--green .service-card__meta,
+.service-card--green .service-card__list {
+  color: var(--clr-white);
+}
+
+.service-card__split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.service-card__split ul {
+  flex: 1 1 45%;
+}
+
+.service-card__note {
+  opacity: 0.8;
+  font-size: var(--fs-body-small);
+}
+
+.service-card--green .service-card__list li::before {
+  background-color: var(--clr-white);
+}
+
+/* меняю ховер для зеленой карточки, т.к. белый текст не видно */
+
+.service-card--green:hover {
+  color: var(--clr-text-main);
+}
+
+.service-card--green:hover .service-card__title,
+.service-card--green:hover .service-card__meta,
+.service-card--green:hover .service-card__list li,
+.service-card--green:hover .service-card__note {
+  color: var(--clr-text-main);
+}
+
+/* СЕКЦИЯ АККОРДЕОН ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ */
+.faq {
+  background-color: var(--clr-bg-light);
+  padding-block: var(--section-padding-y, 40px);
+}
+
+.faq__title {
+  margin-bottom: 32px;
+  color: var(--clr-text-main);
+  font-family: var(--font-family-alt);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+}
+
+/* аккордеон и карточки */
+.faq__accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-hover {
+  box-shadow: var(--shadow-default);
+  border: 1px solid var(--clr-border-alt);
+  background-color: var(--clr-bg);
+  cursor: pointer;
+}
+
+.accordion-item {
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  box-shadow: var(--shadow-default);
+  border-radius: var(--radius-main);
+  background-color: var(--clr-bg);
+}
+
+/* карточка */
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 24px;
+  border: none;
+  background: transparent;
+  color: var(--clr-text-main);
+  font-family: var(--font-family-alt);
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+}
+
+/* иконка стрелка */
+.accordion-icon svg {
+  transform: rotate(-90deg); /* по умолчанию вправо */
+  transition: transform 0.3s ease;
+  fill: var(--clr-primary);
+}
+
+.accordion-header:hover .accordion-icon svg {
+  transform: rotate(0deg); /* имитация раскрытия */
+}
+
+.accordion-item.active .accordion-icon svg {
+  transform: rotate(0deg); /* вниз при открытии */
+}
+
+.accordion-content {
+  max-height: 0;
+  padding: 0 24px;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  background-color: var(--clr-bg-light);
+  color: var(--clr-text-main);
+  font-size: var(--fs-body);
+  border-top: 1px solid rgb(21 21 21 / 10%);
+}
+
+/* Контент аккордеона */
+.accordion-item.active .accordion-content {
+  max-height: 500px; /* максимум, который гарантирует раскрытие */
+  padding: 20px 24px;
+}
+
+/* стили списков */
+.accordion-content ul {
+  margin-top: 12px;
+  padding-left: 20px;
+  line-height: 1.4;
+  list-style: disc;
 }
