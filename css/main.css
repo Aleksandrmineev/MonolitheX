@@ -656,6 +656,7 @@
 .service-card--green {
   background-color: var(--clr-primary);
   color: var(--clr-white);
+  cursor: pointer;
 }
 
 .service-card--green .service-card__title,
