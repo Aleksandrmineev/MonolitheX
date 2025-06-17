@@ -347,3 +347,71 @@
   border-radius: 1px;
   background-color: var(--clr-text-main);
 }
+
+/* ПЛАВАЮЩИЕ КНОПКИ */
+.floating-buttons {
+  position: fixed;
+  right: 40px;
+  bottom: 24px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.floating-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  border-radius: 50%;
+  background-color: var(--clr-bg); /* или белый */
+}
+
+.floating-button:hover {
+  transform: scale(1.1);
+}
+
+.floating-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.scroll-to-top {
+  position: fixed;
+  right: 40px;
+  bottom: 150px;
+  z-index: 1000;
+  display: flex; /* всегда flex */
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  border: none;
+  border-radius: 50%;
+  background-color: #fff;
+  color: var(--clr-primary);
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.scroll-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  transform: scale(1.1);
+}
+
+.scroll-to-top svg {
+  width: 24px;
+  height: 24px;
+  transform: rotate(270deg);
+}

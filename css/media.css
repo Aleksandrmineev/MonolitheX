@@ -178,7 +178,7 @@
   }
 
   .hero__title {
-    font-size: clamp(24px, 6vw, 32px);
+    font-size: clamp(30px, 30px, 32px);
   }
 
   /* Пробую переключить секцию наши проекты из грида в слайдер */
@@ -333,6 +333,44 @@
     border-radius: var(--radius-main);
     background-color: var(--clr-bg);
     gap: 16px;
+  }
+
+  .hero__container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__image-wrapper {
+    display: none;
+  }
+
+  .hero__title {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+  }
+
+  /* Белый логотип */
+  .hero__title::before {
+    position: absolute;
+    top: -80px;
+    right: -00;
+    z-index: -1;
+    width: 150px;
+    height: 150px;
+    background: url('../img/icon/logobefore.png') no-repeat center/contain;
+    content: '';
+  }
+
+  /* Зелёный логотип */
+  .hero__title::after {
+    position: absolute;
+    right: -40px;
+    bottom: -60px;
+    z-index: -1;
+    width: 130px;
+    height: 130px;
+    background: url('../img/icon/logoafter.png') no-repeat center/contain;
+    content: '';
   }
 
   .services__grid {
