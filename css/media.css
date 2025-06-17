@@ -221,7 +221,7 @@
     padding: 8px;
     transition: 0.3s ease;
     border-radius: 50%;
-    background: var(--clr-white);
+    background-color: rgb(255 255 255 / 50%);
     pointer-events: auto;
   }
 
@@ -233,6 +233,11 @@
 
   .certificates__slider-wrapper {
     position: relative;
+    width: 100%;
+  }
+
+  .certificates__slider-wrapper .slider-arrow {
+    display: block;
   }
 
   .certificates__grid {
@@ -244,15 +249,15 @@
 
   .certificate {
     flex: 0 0 auto;
-    width: 260px;
+    width: clamp(150px, 40vw, 320px);
   }
 
   .slider-arrow--prev {
-    left: -16px;
+    left: -30px;
   }
 
   .slider-arrow--next {
-    right: -16px;
+    right: -30px;
   }
 
   .custom-projects__grid {
@@ -377,7 +382,7 @@
     grid-template-columns: auto;
   }
 
-  .footer__about {
+  .footer__dienst {
     display: none;
   }
 }

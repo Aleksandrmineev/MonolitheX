@@ -122,4 +122,24 @@ document.addEventListener('DOMContentLoaded', function () {
       behavior: 'smooth',
     });
   });
+
+  // АНИМАЦИЯ H2
+  document.addEventListener('DOMContentLoaded', function () {
+    const animatedEls = document.querySelectorAll('.animate-from-left');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      {
+        threshold: 0.3, // 30% видимости
+      }
+    );
+
+    animatedEls.forEach((el) => observer.observe(el));
+  });
 });

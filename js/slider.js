@@ -1,64 +1,70 @@
-// СЛАЙДЕР ПРЕСС_ЦЕНТР
 document.addEventListener('DOMContentLoaded', () => {
-  const slider = document.querySelector('.press__slider');
-  const wrapper = document.querySelector('.press__slider-wrapper');
-  const prevBtn = wrapper.querySelector('.slider-arrow--prev');
-  const nextBtn = wrapper.querySelector('.slider-arrow--next');
+  // === СЛАЙДЕР ПРЕСС-ЦЕНТР ===
+  (() => {
+    const wrapper = document.querySelector('.press__slider-wrapper');
+    if (!wrapper) return;
 
-  if (!slider || !prevBtn || !nextBtn) return;
+    const slider = wrapper.querySelector('.press__slider');
+    const prevBtn = wrapper.querySelector('.slider-arrow--prev');
+    const nextBtn = wrapper.querySelector('.slider-arrow--next');
+    const card = slider?.querySelector('.press-card');
+    const cardWidth = card?.offsetWidth || 300;
+    const gap = parseInt(getComputedStyle(slider).gap) || 24;
 
-  const card = slider.querySelector('.press-card');
-  const cardWidth = card?.offsetWidth || 300;
-  const gap = parseInt(getComputedStyle(slider).gap) || 24;
+    if (!slider || !prevBtn || !nextBtn) return;
 
-  nextBtn.addEventListener('click', () => {
-    slider.scrollBy({ left: cardWidth + gap, behavior: 'smooth' });
-  });
+    nextBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: cardWidth + gap, behavior: 'smooth' });
+    });
 
-  prevBtn.addEventListener('click', () => {
-    slider.scrollBy({ left: -cardWidth - gap, behavior: 'smooth' });
-  });
-});
+    prevBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: -cardWidth - gap, behavior: 'smooth' });
+    });
+  })();
 
-// СЛАЙДЕР С ПОРТФОЛИО, ФУНКЦИОНАЛ ДЛЯ АДАПТИВА
-document.addEventListener('DOMContentLoaded', () => {
-  const slider = document.querySelector('.portfolio__grid');
-  const prevBtn = document.querySelector('.slider-arrow--prev');
-  const nextBtn = document.querySelector('.slider-arrow--next');
+  // === СЛАЙДЕР ПОРТФОЛИО ===
+  (() => {
+    const wrapper = document.querySelector('.portfolio__slider-wrapper');
+    if (!wrapper) return;
 
-  if (!slider || !prevBtn || !nextBtn) return;
+    const slider = wrapper.querySelector('.portfolio__grid');
+    const prevBtn = wrapper.querySelector('.slider-arrow--prev');
+    const nextBtn = wrapper.querySelector('.slider-arrow--next');
+    const card = slider?.querySelector('.project-card');
+    const cardWidth = card?.offsetWidth || 300;
+    const gap = parseInt(getComputedStyle(slider).gap) || 16;
 
-  const cardWidth = slider.querySelector('.project-card')?.offsetWidth || 300;
-  const gap = parseInt(getComputedStyle(slider).gap) || 16;
+    if (!slider || !prevBtn || !nextBtn) return;
 
-  nextBtn.addEventListener('click', () => {
-    slider.scrollBy({ left: cardWidth + gap, behavior: 'smooth' });
-  });
+    nextBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: cardWidth + gap, behavior: 'smooth' });
+    });
 
-  prevBtn.addEventListener('click', () => {
-    slider.scrollBy({ left: -cardWidth - gap, behavior: 'smooth' });
-  });
-});
-// СЛАЙДЕР СЕРТИФИКАТЫ, ФУНКЦИОНАЛ ДЛЯ АДАПТИВА
-document.addEventListener('DOMContentLoaded', () => {
-  const slider = document.querySelector('.certificates__grid');
-  const prevBtn = document.querySelector(
-    '.certificates__slider-wrapper .slider-arrow--prev'
-  );
-  const nextBtn = document.querySelector(
-    '.certificates__slider-wrapper .slider-arrow--next'
-  );
+    prevBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: -cardWidth - gap, behavior: 'smooth' });
+    });
+  })();
 
-  if (!slider || !prevBtn || !nextBtn) return;
+  // === СЛАЙДЕР СЕРТИФИКАТЫ ===
+  (() => {
+    const wrapper = document.querySelector('.certificates__slider-wrapper');
+    if (!wrapper) return;
 
-  const itemWidth = slider.querySelector('.certificate')?.offsetWidth || 260;
-  const gap = parseInt(getComputedStyle(slider).gap) || 16;
+    const slider = wrapper.querySelector('.certificates__grid');
+    const prevBtn = wrapper.querySelector('.slider-arrow--prev');
+    const nextBtn = wrapper.querySelector('.slider-arrow--next');
+    const card = slider?.querySelector('.certificate');
+    const cardWidth = card?.offsetWidth || 260;
+    const gap = parseInt(getComputedStyle(slider).gap) || 16;
 
-  nextBtn.addEventListener('click', () => {
-    slider.scrollBy({ left: itemWidth + gap, behavior: 'smooth' });
-  });
+    if (!slider || !prevBtn || !nextBtn) return;
 
-  prevBtn.addEventListener('click', () => {
-    slider.scrollBy({ left: -itemWidth - gap, behavior: 'smooth' });
-  });
+    nextBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: cardWidth + gap, behavior: 'smooth' });
+    });
+
+    prevBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: -cardWidth - gap, behavior: 'smooth' });
+    });
+  })();
 });

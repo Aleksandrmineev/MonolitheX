@@ -351,7 +351,7 @@
 /* ПЛАВАЮЩИЕ КНОПКИ */
 .floating-buttons {
   position: fixed;
-  right: 40px;
+  right: 15px;
   bottom: 24px;
   z-index: 1000;
   display: flex;
@@ -368,7 +368,7 @@
   transition: transform 0.2s ease;
   box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
   border-radius: 50%;
-  background-color: var(--clr-bg); /* или белый */
+  background-color: rgb(255 255 255 / 50%);
 }
 
 .floating-button:hover {
@@ -382,9 +382,9 @@
 
 .scroll-to-top {
   position: fixed;
-  right: 40px;
+  right: 15px;
   bottom: 150px;
-  z-index: 1000;
+  z-index: 100;
   display: flex; /* всегда flex */
   justify-content: center;
   align-items: center;
@@ -395,7 +395,7 @@
   box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
   border: none;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: rgb(255 255 255 / 50%);
   color: var(--clr-primary);
   cursor: pointer;
   visibility: hidden;

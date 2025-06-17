@@ -1,3 +1,4 @@
+/* stylelint-disable keyframes-name-pattern */
 /* stylelint-disable CssSyntaxError */
 /* stylelint-disable selector-class-pattern */
 
@@ -22,27 +23,10 @@
   --font-family-base: 'Manrope', sans-serif;
   --font-family-alt: 'Tektur', sans-serif;
   --font-family-logo: 'Inter', sans-serif;
-
-  /* Font sizes (clamp where needed) */
-  --fs-h1: clamp(30px, 5vw, 48px); /* главный заголовок */
-  --fs-h2: clamp(
-    24px,
-    3vw,
-    32px
-  ); /* например "наши проекты", "реализация проектов и сервис" */
-
-  --fs-h3: clamp(
-    16px,
-    2.5vw,
-    24px
-  ); /* часто задаваемые вопросы, блоки второго уровня */
-
-  --fs-h4: : clamp(
-    14px,
-    16px,
-    16px
-  );
-  --fs-body: clamp(14px, 1.5vw, 16px); /* основной текст */
+  --fs-h1: clamp(30px, 5vw, 48px);
+  --fs-h2: clamp(24px, 3vw, 32px);
+  --fs-h4: clamp(14px, 16px, 16px);
+  --fs-body: clamp(14px, 1.5vw, 16px);
   --fs-body-small: clamp(
     12px,
     1vw,
@@ -65,12 +49,9 @@
   /* Container */
   --container-width: 1200px;
   --container-padding: 20px;
-  --section-padding-y: 20px
-
-  /* Border radius */;
+  --section-padding-y: 20px /* Border radius */;
   --radius-main: 16px;
   --radius-btn: 8px;
-  
 
   /* Box shadow */
   --shadow-default: 2px 2px 4px rgb(21 21 21 / 15%);
@@ -84,6 +65,11 @@
   /* Icons */
   --icon-social-width: 24px;
   --icon-social-height: 20px;
+
+  /* Общие настройки анимации */
+  --anim-duration: 0.6s;
+  --anim-easing: ease-in-out;
+  --fade-translate: translateX(-30px);
 }
 
 html {
@@ -111,6 +97,34 @@ section {
   padding-left: var(--container-padding);
 }
 
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-from-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease;
+}
+
+.animate-from-left.visible {
+  animation: fadeInLeft 0.6s ease forwards;
+}
+
+h1,
+h2 {
+  opacity: 0;
+  animation: fadeInLeft var(--anim-duration) var(--anim-easing) forwards;
+}
+
 h1 {
   color: var(--clr-text-main);
   font-family: var(--font-family-alt);
@@ -134,7 +148,6 @@ h3 {
   line-height: var(--lh-120);
   text-align: left;
 }
-
 
 p {
   color: var(--clr-text-main);
@@ -233,7 +246,6 @@ img {
   height: auto;
 }
 
-
 select,
 input {
   border: 1px solid var(--clr-border-alt);
@@ -255,4 +267,3 @@ input {
   box-shadow: none;
   background-color: var(--clr-bg-light);
 }
-
