@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 /* stylelint-disable selector-class-pattern */
 @media (width <= 1200px) {
   .header__subpopup {
@@ -201,6 +202,10 @@
 
   .portfolio__slider-wrapper {
     position: relative;
+  }
+
+  .portfolio__slider-wrapper .portfolio__arrows {
+    display: block;
   }
 
   .portfolio__arrows {

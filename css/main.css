@@ -134,6 +134,10 @@
   position: relative;
 }
 
+.portfolio__slider-wrapper .portfolio__arrows {
+  display: none;
+}
+
 .portfolio__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -823,10 +827,20 @@
 .press__slider {
   display: flex;
   overflow-x: auto;
+  cursor: grab;
   gap: 24px;
-  padding-block: 8px;
-  padding-inline: 16px;
+  -ms-overflow-style: none; /* IE */
+  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+}
+
+.slider:active {
+  cursor: grabbing;
+}
+
+.slider::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 .press__arrow {
@@ -907,11 +921,14 @@
   position: relative;
 }
 
+.certificates__slider-wrapper .slider-arrow {
+  display: none;
+}
+
 .slider-arrow {
   position: absolute;
   top: 50%;
   z-index: 10;
-  display: none;
   padding: 0;
   transform: translateY(-50%);
   border: none;
@@ -920,11 +937,11 @@
 }
 
 .slider-arrow--prev {
-  left: -32px;
+  left: -15px;
 }
 
 .slider-arrow--next {
-  right: -32px;
+  right: -15px;
 }
 
 .slider-icon {
