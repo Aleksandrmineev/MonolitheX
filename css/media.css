@@ -1,3 +1,4 @@
+/* stylelint-disable selector-class-pattern */
 @media (width <= 1200px) {
   .header__subpopup {
     grid-template-columns: repeat(3, minmax(195px, 1fr));
@@ -87,7 +88,6 @@
     visibility: hidden;
   }
 
-  /* stylelint-disable-next-line selector-class-pattern */
   .header__nav.is-open {
     opacity: 1;
     transform: translateY(0);
@@ -176,6 +176,88 @@
     background-color: var(--clr-bg);
     gap: 16px;
   }
+
+  .hero__title {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  /* Пробую переключить секцию наши проекты из грида в слайдер */
+
+  .portfolio__grid {
+    display: flex;
+    padding-bottom: 16px;
+    overflow-x: auto;
+    gap: 16px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .project-card {
+    flex: 0 0 80%;
+    min-width: 280px;
+    max-width: 320px;
+    scroll-snap-align: start;
+  }
+
+  .portfolio__slider-wrapper {
+    position: relative;
+  }
+
+  .portfolio__arrows {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+
+  .slider-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    transition: 0.3s ease;
+    border-radius: 50%;
+    background: var(--clr-white);
+    pointer-events: auto;
+  }
+
+  .slider-arrow svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--clr-accent);
+  }
+
+  .certificates__slider-wrapper {
+    position: relative;
+  }
+
+  .certificates__grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    scroll-behavior: smooth;
+  }
+
+  .certificate {
+    flex: 0 0 auto;
+    width: 260px;
+  }
+
+  .slider-arrow--prev {
+    left: -16px;
+  }
+
+  .slider-arrow--next {
+    right: -16px;
+  }
+
+  .custom-projects__grid {
+    grid-template-columns: auto;
+  }
 }
 
 @media (width <= 720px) {
@@ -251,6 +333,14 @@
     border-radius: var(--radius-main);
     background-color: var(--clr-bg);
     gap: 16px;
+  }
+
+  .services__grid {
+    grid-template-columns: auto;
+  }
+
+  .footer__about {
+    display: none;
   }
 }
 

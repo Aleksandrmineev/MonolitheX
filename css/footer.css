@@ -1,0 +1,70 @@
+/* FOOTER STYLES */
+.footer {
+  margin-top: 40px;
+  padding: 40px 0;
+  background-color: var(--clr-bg-light);
+  color: var(--clr-text-main);
+  font-size: var(--fs-body);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__logo {
+  max-width: 160px;
+  margin-bottom: 8px;
+}
+
+.footer__title {
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+  list-style: none;
+}
+
+.footer__links a {
+  transition: color 0.2s ease;
+  color: var(--clr-text-main);
+  text-decoration: none;
+}
+
+.footer__links a:hover {
+  color: var(--clr-primary);
+}
+
+.footer__contact-block {
+  margin-bottom: 12px;
+}
+
+.footer__socials {
+  display: flex;
+  margin-top: 12px;
+  gap: 16px;
+}
+
+.footer__socials a svg {
+  width: 24px;
+  height: 24px;
+  transition: fill 0.2s ease;
+  fill: var(--clr-text-main);
+}
+
+.footer__socials a:hover svg {
+  fill: var(--clr-primary);
+}

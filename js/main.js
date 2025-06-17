@@ -104,4 +104,22 @@ document.addEventListener('DOMContentLoaded', function () {
     nav.classList.toggle('is-open');
     burger.classList.toggle('is-active');
   });
+
+  // КНОПКА НАВЕРХ
+  const scrollBtn = document.querySelector('.scroll-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add('is-visible');
+    } else {
+      scrollBtn.classList.remove('is-visible');
+    }
+  });
+
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  });
 });

@@ -204,60 +204,87 @@
           </div>
         </div>
       </header>
-
+      <!-- МЭЙН ВКЛЮЧАЕТ В СЕБЯ ВСЮ ГЛАВНУЮ СТРАНИЦУ. ПОВТОРЯЮЩАЯСЯ СЕКЦИЯ СВЯЗАТЬСЯ С НАМИ ВЫВЕДЕНА В TEMPLATE -->
       <main>
         <!-- ГЛАВНЫЙ ЭКРАН -->
         <section class="hero">
-          <section class="hero">
-            <div class="container hero__container">
-              <div class="hero__content">
-                <h1 class="hero__title">
-                  Проектирование зданий и сооружений<br />
-                  из монолитного железобетона
-                </h1>
-                <p class="hero__tags">
-                  <a href="#">Разработка КР</a> | <a href="#">КЖ</a> |
-                  <a href="#">КМ</a>
-                </p>
+          <div class="container hero__container">
+            <div class="hero__content">
+              <h1 class="hero__title">
+                Проектирование зданий и сооружений<br />
+                из монолитного железобетона
+              </h1>
+              <p class="hero__tags">
+                <a href="#">Разработка КР</a> | <a href="#">КЖ</a> |
+                <a href="#">КМ</a>
+              </p>
 
-                <form class="hero__form">
-                  <h3 class="form__title">Связаться с нами</h3>
-                  <input type="text" placeholder="Имя" name="name" required />
-                  <input
-                    type="tel"
-                    placeholder="Телефон"
-                    name="phone"
-                    required
-                  />
-                  <input
-                    type="email"
-                    placeholder="E-mail"
-                    name="email"
-                    required
-                  />
-                  <label class="form__agreement">
-                    <input type="checkbox" required />
-                    Нажимая на кнопку, я принимаю условия
-                    <a href="/policy" target="_blank" class="form__link"
-                      >соглашения</a
-                    >.
-                  </label>
-                  <button type="submit" class="button button-primary">
-                    <span class="button__text">Отправить</span>
-                  </button>
-                  <a href="#" class="form__report-link">Сообщить о нарушении</a>
-                </form>
-              </div>
-
-              <div class="hero__image-wrapper">
-                <img
-                  src="img/content/logobig.png"
-                  alt="Специалист"
-                  class="hero__image"
+              <form class="hero__form">
+                <h3 class="form__title">Связаться с нами</h3>
+                <input type="text" placeholder="Имя" name="name" required />
+                <input type="tel" placeholder="Телефон" name="phone" required />
+                <input
+                  type="email"
+                  placeholder="E-mail"
+                  name="email"
+                  required
                 />
-              </div>
+                <label class="form__agreement">
+                  <input type="checkbox" required />
+                  Нажимая на кнопку, я принимаю условия
+                  <a href="/policy" target="_blank" class="form__link"
+                    >соглашения</a
+                  >.
+                </label>
+                <button type="submit" class="button button-primary">
+                  <span class="button__text">Отправить</span>
+                </button>
+                <a href="#" class="form__report-link">Сообщить о нарушении</a>
+              </form>
             </div>
-          </section>
+
+            <div class="hero__image-wrapper">
+              <img
+                src="img/content/logobig.png"
+                alt="Специалист"
+                class="hero__image"
+              />
+            </div>
+
+            <!-- Плавающие кнопки -->
+            <div class="floating-buttons">
+              <a
+                href="tel:+79272092064"
+                class="floating-button"
+                aria-label="Позвонить"
+              >
+                <img src="img/icon/phone.svg" alt="Позвонить" />
+              </a>
+              <a
+                href="mailto:info@monolithex.pro"
+                class="floating-button"
+                aria-label="Написать"
+              >
+                <img src="img/icon/mail.svg" alt="Написать" />
+              </a>
+            </div>
+
+            <!-- Кнопка вверх -->
+            <button class="scroll-to-top" aria-label="Наверх">
+              <svg
+                width="15"
+                height="20"
+                viewBox="0 0 15 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.8667 11.6L3.2 19.6C1.88153 20.5889 0 19.6481 0 18L0 2C0 0.35191 1.88153 -0.588856 3.2 0.4L13.8667 8.4C14.9333 9.2 14.9333 10.8 13.8667 11.6Z"
+                  fill="#18B75C"
+                />
+              </svg>
+            </button>
+          </div>
         </section>
         <!-- ПРЕИМУЩЕСТВА -->
         <section class="advantages">
@@ -334,8 +361,8 @@
             <!-- Заголовок на сером фоне -->
             <div class="services__title-block">
               <h2 class="services__title">
-                Monolithex – предоставляет большой пакет услуг<br />
-                по проектированию высотных зданий из монолитного железобетона
+                Monolithex – предоставляет большой пакет услуг по проектированию
+                высотных зданий из монолитного железобетона
               </h2>
             </div>
 
@@ -411,183 +438,240 @@
                 <span class="button__text">Все проекты</span>
               </a>
             </div>
-
-            <!-- Сетка проектов -->
-            <div class="portfolio__grid">
-              <div class="project-card">
-                <!-- Основное содержимое карточки -->
-                <div class="project-card__body">
-                  <div class="project-card__image-wrapper">
-                    <!-- Логотип + название -->
-                    <div class="project-card__label">
-                      <img
-                        src="img/icon/logo.png"
-                        alt="MonolitheX"
-                        class="project-card__logo"
-                      />
-                      <span class="project-card__brand">MonolitheX</span>
-                    </div>
-                    <img
-                      src="img/content/portfolio/img1.png"
-                      alt="Многоэтажный дом"
-                      class="project-card__image"
+            <div class="portfolio__slider-wrapper">
+              <div class="portfolio__arrows">
+                <!-- Стрелка влево -->
+                <button
+                  class="slider-arrow slider-arrow--prev"
+                  aria-label="Назад"
+                >
+                  <svg
+                    width="15"
+                    height="20"
+                    viewBox="0 0 15 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.13333 8.4L11.8 0.4C13.1185 -0.588854 15 0.35191 15 2L15 18C15 19.6481 13.1185 20.5889 11.8 19.6L1.13333 11.6C0.0666666 10.8 0.0666666 9.2 1.13333 8.4Z"
+                      fill="#18B75C"
                     />
-                  </div>
-                  <h3 class="project-card__title">
-                    МНОГОЭТАЖНЫЙ ЖИЛОЙ ДОМ<br />
-                    С ПОДЗЕМНЫМ ПАРКИНГОМ
-                  </h3>
-                  <a href="#" class="portfolio-card__btn button button-primary">
-                    <span class="button__text">Подробнее</span>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Карточка портфолио -->
-              <div class="project-card">
-                <!-- Основное содержимое карточки -->
-                <div class="project-card__body">
-                  <div class="project-card__image-wrapper">
-                    <!-- Логотип + название -->
-                    <div class="project-card__label">
-                      <img
-                        src="img/icon/logo.png"
-                        alt="MonolitheX"
-                        class="project-card__logo"
-                      />
-                      <span class="project-card__brand">MonolitheX</span>
-                    </div>
-                    <img
-                      src="img/content/portfolio/img1.png"
-                      alt="Многоэтажный дом"
-                      class="project-card__image"
+                  </svg>
+                </button>
+                <!-- Стрелка вправо -->
+                <button
+                  class="slider-arrow slider-arrow--next"
+                  aria-label="Вперёд"
+                >
+                  <svg
+                    width="15"
+                    height="20"
+                    viewBox="0 0 15 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.8667 11.6L3.2 19.6C1.88153 20.5889 0 19.6481 0 18L0 2C0 0.35191 1.88153 -0.588856 3.2 0.4L13.8667 8.4C14.9333 9.2 14.9333 10.8 13.8667 11.6Z"
+                      fill="#18B75C"
                     />
-                  </div>
-                  <h3 class="project-card__title">
-                    МНОГОЭТАЖНЫЙ ЖИЛОЙ ДОМ <br />
-                    С ПОДЗЕМНЫМ ПАРКИНГОМ
-                  </h3>
-                  <a href="#" class="portfolio-card__btn button button-primary">
-                    <span class="button__text">Подробнее</span>
-                  </a>
-                </div>
+                  </svg>
+                </button>
               </div>
-
-              <!-- Карточка портфолио -->
-              <div class="project-card">
-                <!-- Основное содержимое карточки -->
-                <div class="project-card__body">
-                  <div class="project-card__image-wrapper">
-                    <!-- Логотип + название -->
-                    <div class="project-card__label">
+              <!-- Сетка проектов -->
+              <div class="portfolio__grid">
+                <div class="project-card">
+                  <!-- Основное содержимое карточки -->
+                  <div class="project-card__body">
+                    <div class="project-card__image-wrapper">
+                      <!-- Логотип + название -->
+                      <div class="project-card__label">
+                        <img
+                          src="img/icon/logo.png"
+                          alt="MonolitheX"
+                          class="project-card__logo"
+                        />
+                        <span class="project-card__brand">MonolitheX</span>
+                      </div>
                       <img
-                        src="img/icon/logo.png"
-                        alt="MonolitheX"
-                        class="project-card__logo"
+                        src="img/content/portfolio/img1.png"
+                        alt="Многоэтажный дом"
+                        class="project-card__image"
                       />
-                      <span class="project-card__brand">MonolitheX</span>
                     </div>
-                    <img
-                      src="img/content/portfolio/img1.png"
-                      alt="Многоэтажный дом"
-                      class="project-card__image"
-                    />
+                    <h3 class="project-card__title">
+                      МНОГОЭТАЖНЫЙ ЖИЛОЙ ДОМ<br />
+                      С ПОДЗЕМНЫМ ПАРКИНГОМ
+                    </h3>
+                    <a
+                      href="#"
+                      class="portfolio-card__btn button button-primary"
+                    >
+                      <span class="button__text">Подробнее</span>
+                    </a>
                   </div>
-                  <h3 class="project-card__title">башня рлс</h3>
-                  <a href="#" class="portfolio-card__btn button button-primary">
-                    <span class="button__text">Подробнее</span>
-                  </a>
                 </div>
-              </div>
 
-              <!-- Карточка портфолио -->
-              <div class="project-card">
-                <!-- Основное содержимое карточки -->
-                <div class="project-card__body">
-                  <div class="project-card__image-wrapper">
-                    <!-- Логотип + название -->
-                    <div class="project-card__label">
+                <!-- Карточка портфолио -->
+                <div class="project-card">
+                  <!-- Основное содержимое карточки -->
+                  <div class="project-card__body">
+                    <div class="project-card__image-wrapper">
+                      <!-- Логотип + название -->
+                      <div class="project-card__label">
+                        <img
+                          src="img/icon/logo.png"
+                          alt="MonolitheX"
+                          class="project-card__logo"
+                        />
+                        <span class="project-card__brand">MonolitheX</span>
+                      </div>
                       <img
-                        src="img/icon/logo.png"
-                        alt="MonolitheX"
-                        class="project-card__logo"
+                        src="img/content/portfolio/img1.png"
+                        alt="Многоэтажный дом"
+                        class="project-card__image"
                       />
-                      <span class="project-card__brand">MonolitheX</span>
                     </div>
-                    <img
-                      src="img/content/portfolio/img1.png"
-                      alt="Многоэтажный дом"
-                      class="project-card__image"
-                    />
+                    <h3 class="project-card__title">
+                      МНОГОЭТАЖНЫЙ ЖИЛОЙ ДОМ <br />
+                      С ПОДЗЕМНЫМ ПАРКИНГОМ
+                    </h3>
+                    <a
+                      href="#"
+                      class="portfolio-card__btn button button-primary"
+                    >
+                      <span class="button__text">Подробнее</span>
+                    </a>
                   </div>
-                  <h3 class="project-card__title">
-                    Многоэтажный жилой дом <br />
-                    с подземным паркингом
-                  </h3>
-                  <a href="#" class="portfolio-card__btn button button-primary">
-                    <span class="button__text">Подробнее</span>
-                  </a>
                 </div>
-              </div>
 
-              <!-- Карточка портфолио -->
-              <div class="project-card">
-                <!-- Основное содержимое карточки -->
-                <div class="project-card__body">
-                  <div class="project-card__image-wrapper">
-                    <!-- Логотип + название -->
-                    <div class="project-card__label">
+                <!-- Карточка портфолио -->
+                <div class="project-card">
+                  <!-- Основное содержимое карточки -->
+                  <div class="project-card__body">
+                    <div class="project-card__image-wrapper">
+                      <!-- Логотип + название -->
+                      <div class="project-card__label">
+                        <img
+                          src="img/icon/logo.png"
+                          alt="MonolitheX"
+                          class="project-card__logo"
+                        />
+                        <span class="project-card__brand">MonolitheX</span>
+                      </div>
                       <img
-                        src="img/icon/logo.png"
-                        alt="MonolitheX"
-                        class="project-card__logo"
+                        src="img/content/portfolio/img1.png"
+                        alt="Многоэтажный дом"
+                        class="project-card__image"
                       />
-                      <span class="project-card__brand">MonolitheX</span>
                     </div>
-                    <img
-                      src="img/content/portfolio/img1.png"
-                      alt="Многоэтажный дом"
-                      class="project-card__image"
-                    />
+                    <h3 class="project-card__title">башня рлс</h3>
+                    <a
+                      href="#"
+                      class="portfolio-card__btn button button-primary"
+                    >
+                      <span class="button__text">Подробнее</span>
+                    </a>
                   </div>
-                  <h3 class="project-card__title">
-                    Многофункциональный центр <br />
-                    с 2-х этажным паркингом
-                  </h3>
-                  <a href="#" class="portfolio-card__btn button button-primary">
-                    <span class="button__text">Подробнее</span>
-                  </a>
                 </div>
-              </div>
 
-              <!-- Карточка портфолио -->
-              <div class="project-card">
-                <!-- Основное содержимое карточки -->
-                <div class="project-card__body">
-                  <div class="project-card__image-wrapper">
-                    <!-- Логотип + название -->
-                    <div class="project-card__label">
+                <!-- Карточка портфолио -->
+                <div class="project-card">
+                  <!-- Основное содержимое карточки -->
+                  <div class="project-card__body">
+                    <div class="project-card__image-wrapper">
+                      <!-- Логотип + название -->
+                      <div class="project-card__label">
+                        <img
+                          src="img/icon/logo.png"
+                          alt="MonolitheX"
+                          class="project-card__logo"
+                        />
+                        <span class="project-card__brand">MonolitheX</span>
+                      </div>
                       <img
-                        src="img/icon/logo.png"
-                        alt="MonolitheX"
-                        class="project-card__logo"
+                        src="img/content/portfolio/img1.png"
+                        alt="Многоэтажный дом"
+                        class="project-card__image"
                       />
-                      <span class="project-card__brand">MonolitheX</span>
                     </div>
-                    <img
-                      src="img/content/portfolio/img1.png"
-                      alt="Многоэтажный дом"
-                      class="project-card__image"
-                    />
+                    <h3 class="project-card__title">
+                      Многоэтажный жилой дом <br />
+                      с подземным паркингом
+                    </h3>
+                    <a
+                      href="#"
+                      class="portfolio-card__btn button button-primary"
+                    >
+                      <span class="button__text">Подробнее</span>
+                    </a>
                   </div>
-                  <h3 class="project-card__title">укрытия резервуаров</h3>
-                  <a href="#" class="portfolio-card__btn button button-primary">
-                    <span class="button__text">Подробнее</span>
-                  </a>
                 </div>
-              </div>
 
-              <!-- ... повторить еще 5 карточек -->
+                <!-- Карточка портфолио -->
+                <div class="project-card">
+                  <!-- Основное содержимое карточки -->
+                  <div class="project-card__body">
+                    <div class="project-card__image-wrapper">
+                      <!-- Логотип + название -->
+                      <div class="project-card__label">
+                        <img
+                          src="img/icon/logo.png"
+                          alt="MonolitheX"
+                          class="project-card__logo"
+                        />
+                        <span class="project-card__brand">MonolitheX</span>
+                      </div>
+                      <img
+                        src="img/content/portfolio/img1.png"
+                        alt="Многоэтажный дом"
+                        class="project-card__image"
+                      />
+                    </div>
+                    <h3 class="project-card__title">
+                      Многофункциональный центр <br />
+                      с 2-х этажным паркингом
+                    </h3>
+                    <a
+                      href="#"
+                      class="portfolio-card__btn button button-primary"
+                    >
+                      <span class="button__text">Подробнее</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Карточка портфолио -->
+                <div class="project-card">
+                  <!-- Основное содержимое карточки -->
+                  <div class="project-card__body">
+                    <div class="project-card__image-wrapper">
+                      <!-- Логотип + название -->
+                      <div class="project-card__label">
+                        <img
+                          src="img/icon/logo.png"
+                          alt="MonolitheX"
+                          class="project-card__logo"
+                        />
+                        <span class="project-card__brand">MonolitheX</span>
+                      </div>
+                      <img
+                        src="img/content/portfolio/img1.png"
+                        alt="Многоэтажный дом"
+                        class="project-card__image"
+                      />
+                    </div>
+                    <h3 class="project-card__title">укрытия резервуаров</h3>
+                    <a
+                      href="#"
+                      class="portfolio-card__btn button button-primary"
+                    >
+                      <span class="button__text">Подробнее</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- ... повторить еще 5 карточек -->
+              </div>
             </div>
           </div>
         </section>
@@ -687,61 +771,99 @@
         <section class="certificates section">
           <div class="container">
             <h2 class="certificates__title">Сертификаты</h2>
-            <div class="certificates__grid" id="lightgallery">
-              <a
-                class="certificate card-hover certificate-link"
-                href="img/content/certificate/letter1.png"
+            <div class="certificates__slider-wrapper">
+              <!-- Стрелка влево -->
+              <button
+                class="slider-arrow slider-arrow--prev"
+                aria-label="Назад"
               >
-                <img
-                  src="img/content/certificate/letter1.png"
-                  alt="Сертификат 1"
-                />
-              </a>
-              <a
-                class="certificate card-hover certificate-link"
-                href="img/content/certificate/letter2.png"
+                <svg
+                  width="15"
+                  height="20"
+                  viewBox="0 0 15 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.13333 8.4L11.8 0.4C13.1185 -0.588854 15 0.35191 15 2L15 18C15 19.6481 13.1185 20.5889 11.8 19.6L1.13333 11.6C0.0666666 10.8 0.0666666 9.2 1.13333 8.4Z"
+                    fill="#18B75C"
+                  />
+                </svg>
+              </button>
+              <div class="certificates__grid" id="lightgallery">
+                <a
+                  class="certificate card-hover certificate-link"
+                  href="img/content/certificate/letter1.png"
+                >
+                  <img
+                    src="img/content/certificate/letter1.png"
+                    alt="Сертификат 1"
+                  />
+                </a>
+                <a
+                  class="certificate card-hover certificate-link"
+                  href="img/content/certificate/letter2.png"
+                >
+                  <img
+                    src="img/content/certificate/letter2.png"
+                    alt="Сертификат 2"
+                  />
+                </a>
+                <a
+                  class="certificate card-hover certificate-link"
+                  href="img/content/certificate/letter3.png"
+                >
+                  <img
+                    src="img/content/certificate/letter3.png"
+                    alt="Сертификат 3"
+                  />
+                </a>
+                <a
+                  class="certificate card-hover certificate-link"
+                  href="img/content/certificate/letter4.png"
+                >
+                  <img
+                    src="img/content/certificate/letter4.png"
+                    alt="Сертификат 4"
+                  />
+                </a>
+                <a
+                  class="certificate card-hover certificate-link"
+                  href="img/content/certificate/letter5.png"
+                >
+                  <img
+                    src="img/content/certificate/letter5.png"
+                    alt="Сертификат 5"
+                  />
+                </a>
+                <a
+                  class="certificate card-hover certificate-link"
+                  href="img/content/certificate/letter6.png"
+                >
+                  <img
+                    src="img/content/certificate/letter6.png"
+                    alt="Сертификат 6"
+                  />
+                </a>
+              </div>
+              <!-- Стрелка вправо -->
+              <button
+                class="slider-arrow slider-arrow--next"
+                aria-label="Вперёд"
               >
-                <img
-                  src="img/content/certificate/letter2.png"
-                  alt="Сертификат 2"
-                />
-              </a>
-              <a
-                class="certificate card-hover certificate-link"
-                href="img/content/certificate/letter3.png"
-              >
-                <img
-                  src="img/content/certificate/letter3.png"
-                  alt="Сертификат 3"
-                />
-              </a>
-              <a
-                class="certificate card-hover certificate-link"
-                href="img/content/certificate/letter4.png"
-              >
-                <img
-                  src="img/content/certificate/letter4.png"
-                  alt="Сертификат 4"
-                />
-              </a>
-              <a
-                class="certificate card-hover certificate-link"
-                href="img/content/certificate/letter5.png"
-              >
-                <img
-                  src="img/content/certificate/letter5.png"
-                  alt="Сертификат 5"
-                />
-              </a>
-              <a
-                class="certificate card-hover certificate-link"
-                href="img/content/certificate/letter6.png"
-              >
-                <img
-                  src="img/content/certificate/letter6.png"
-                  alt="Сертификат 6"
-                />
-              </a>
+                <svg
+                  width="15"
+                  height="20"
+                  viewBox="0 0 15 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.8667 11.6L3.2 19.6C1.88153 20.5889 0 19.6481 0 18L0 2C0 0.35191 1.88153 -0.588856 3.2 0.4L13.8667 8.4C14.9333 9.2 14.9333 10.8 13.8667 11.6Z"
+                    fill="#18B75C"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </section>
@@ -820,47 +942,7 @@
         </section>
 
         <!-- СЕКЦИЯ С ФОРМОЙ -->
-        <section class="form-section">
-          <div class="container form-section__container">
-            <div class="form-section__grid">
-              <!-- Левая часть — форма -->
-              <div class="form-block">
-                <h3 class="form-block__title"></h3>
-
-                <form class="hero__form">
-                  <h3 class="form__title">Связаться с нами</h3>
-                  <input type="text" placeholder="Имя" name="name" required />
-                  <input
-                    type="tel"
-                    placeholder="Телефон"
-                    name="phone"
-                    required
-                  />
-                  <input
-                    type="email"
-                    placeholder="E-mail"
-                    name="email"
-                    required
-                  />
-                  <label class="form__agreement">
-                    <input type="checkbox" required />
-                    Нажимая на кнопку, я принимаю условия
-                    <a href="/policy" target="_blank" class="form__link"
-                      >соглашения</a
-                    >.
-                  </label>
-                  <button type="submit" class="button button-primary">
-                    <span class="button__text">Отправить</span>
-                  </button>
-                  <a href="#" class="form__report-link">Сообщить о нарушении</a>
-                </form>
-              </div>
-
-              <!-- Правая часть — placeholder для картинки -->
-              <div class="form-section__image-placeholder"></div>
-            </div>
-          </div>
-        </section>
+        <div id="insert-form-section-1"></div>
 
         <!-- СЕРВИС -->
         <section class="services section">
@@ -1079,9 +1161,337 @@
             </div>
           </div>
         </section>
+
+        <!-- ПРЕСС-ЦЕНТР -->
+        <section class="press section">
+          <div class="container press__container">
+            <h2 class="press__title">Пресс-центр</h2>
+
+            <div class="press__slider-wrapper">
+              <!-- Стрелка влево -->
+              <button
+                class="slider-arrow slider-arrow--prev"
+                aria-label="Назад"
+              >
+                <svg
+                  width="15"
+                  height="20"
+                  viewBox="0 0 15 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.13333 8.4L11.8 0.4C13.1185 -0.588854 15 0.35191 15 2L15 18C15 19.6481 13.1185 20.5889 11.8 19.6L1.13333 11.6C0.0666666 10.8 0.0666666 9.2 1.13333 8.4Z"
+                    fill="#18B75C"
+                  />
+                </svg>
+              </button>
+
+              <!-- Слайдер -->
+              <div class="press__slider">
+                <div class="press-card">
+                  <div class="press-card__image">
+                    <div class="press-card__label">
+                      <img
+                        src="img/icon/logo.png"
+                        alt="MonolitheX"
+                        class="project-card__logo"
+                      />
+                      <span class="project-card__brand">MonolitheX</span>
+                    </div>
+                    <img
+                      src="img/content/slider/press1.png"
+                      alt="Пресс-релиз 1"
+                    />
+                  </div>
+
+                  <div class="press-card__meta">
+                    <span class="press-card__date">02/05/2025</span>
+                    <h3 class="press-card__headline">
+                      Оптимизация конструктивных решений
+                    </h3>
+                    <p class="press-card__excerpt">
+                      Процесс проектирования — это всегда вызов. Особенно, когда
+                      речь идёт о...
+                    </p>
+                  </div>
+                  <a href="#" class="button button-primary">
+                    <span class="button__text">Читать статью</span>
+                  </a>
+                </div>
+
+                <div class="press-card">
+                  <div class="press-card__image">
+                    <div class="press-card__label">
+                      <img
+                        src="img/icon/logo.png"
+                        alt="MonolitheX"
+                        class="project-card__logo"
+                      />
+                      <span class="project-card__brand">MonolitheX</span>
+                    </div>
+                    <img
+                      src="img/content/slider/press2.png"
+                      alt="Пресс-релиз 1"
+                    />
+                  </div>
+                  <div class="press-card__meta">
+                    <span class="press-card__date">02/05/2025</span>
+                    <h3 class="press-card__headline">
+                      Виды соединений металлических конструкций
+                    </h3>
+                    <p class="press-card__excerpt">
+                      Соединения металлических конструкций играют ключевую роль
+                      в...
+                    </p>
+                  </div>
+                  <a href="#" class="button button-primary">
+                    <span class="button__text">Читать статью</span>
+                  </a>
+                </div>
+
+                <div class="press-card">
+                  <div class="press-card__image">
+                    <div class="press-card__label">
+                      <img
+                        src="img/icon/logo.png"
+                        alt="MonolitheX"
+                        class="project-card__logo"
+                      />
+                      <span class="project-card__brand">MonolitheX</span>
+                    </div>
+                    <img
+                      src="img/content/slider/press3.png"
+                      alt="Пресс-релиз 1"
+                    />
+                  </div>
+                  <div class="press-card__meta">
+                    <span class="press-card__date">02/05/2025</span>
+                    <h3 class="press-card__headline">
+                      Армирование железобетонных конструкций
+                    </h3>
+                    <p class="press-card__excerpt">
+                      Армирование — это ключевой элемент технологии
+                      железобетона...
+                    </p>
+                  </div>
+                  <a href="#" class="button button-primary">
+                    <span class="button__text">Читать статью</span>
+                  </a>
+                </div>
+
+                <div class="press-card">
+                  <div class="press-card__image">
+                    <div class="press-card__label">
+                      <img
+                        src="img/icon/logo.png"
+                        alt="MonolitheX"
+                        class="project-card__logo"
+                      />
+                      <span class="project-card__brand">MonolitheX</span>
+                    </div>
+                    <img
+                      src="img/content/slider/press1.png"
+                      alt="Пресс-релиз 1"
+                    />
+                  </div>
+                  <div class="press-card__meta">
+                    <span class="press-card__date">02/05/2025</span>
+                    <h3 class="press-card__headline">
+                      3D-моделирование в монолитном проектировании
+                    </h3>
+                    <p class="press-card__excerpt">
+                      Использование BIM и 3D-подходов ускоряет согласование и
+                      повышает точность...
+                    </p>
+                  </div>
+                  <a href="#" class="button button-primary">
+                    <span class="button__text">Читать статью</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Стрелка вправо -->
+              <button
+                class="slider-arrow slider-arrow--next"
+                aria-label="Вперёд"
+              >
+                <svg
+                  width="15"
+                  height="20"
+                  viewBox="0 0 15 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.8667 11.6L3.2 19.6C1.88153 20.5889 0 19.6481 0 18L0 2C0 0.35191 1.88153 -0.588856 3.2 0.4L13.8667 8.4C14.9333 9.2 14.9333 10.8 13.8667 11.6Z"
+                    fill="#18B75C"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div class="press__more">
+              <a href="#" class="button button-secondary">
+                <span class="button__text">Все статьи</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- КОПИЯ СЕКЦИИ С ФОРМОЙ-->
+        <div id="insert-form-section-2"></div>
+
+        <!-- СЕКЦИЯ С ФОРМОЙ, ПОВТОРЯЮЩАЯСЯ -->
+        <template id="form-template">
+          <section class="form-section">
+            <div class="container form-section__container">
+              <div class="form-section__grid">
+                <!-- Левая часть — форма -->
+                <div class="form-block">
+                  <h3 class="form-block__title"></h3>
+
+                  <form class="hero__form">
+                    <h3 class="form__title">Связаться с нами</h3>
+                    <input type="text" placeholder="Имя" name="name" required />
+                    <input
+                      type="tel"
+                      placeholder="Телефон"
+                      name="phone"
+                      required
+                    />
+                    <input
+                      type="email"
+                      placeholder="E-mail"
+                      name="email"
+                      required
+                    />
+                    <label class="form__agreement">
+                      <input type="checkbox" required />
+                      Нажимая на кнопку, я принимаю условия
+                      <a href="/policy" target="_blank" class="form__link"
+                        >соглашения</a
+                      >.
+                    </label>
+                    <button type="submit" class="button button-primary">
+                      <span class="button__text">Отправить</span>
+                    </button>
+                    <a href="#" class="form__report-link"
+                      >Сообщить о нарушении</a
+                    >
+                  </form>
+                </div>
+
+                <!-- Правая часть — placeholder для картинки -->
+                <div class="form-section__image-placeholder"></div>
+              </div>
+            </div>
+          </section>
+        </template>
       </main>
 
-      <footer class="section footer"></footer>
+      <footer class="footer section">
+        <div class="container">
+          <div class="footer__grid">
+            <!-- Логотип и описание -->
+            <div class="footer__column footer__brand">
+              <img
+                src="img/icon/footer/logofooter.png"
+                alt="MonolitheX"
+                class="footer__logo"
+              />
+              <p>Monolithex © 2024–2025</p>
+              <p>Проектирование монолитного железобетона.</p>
+              <p>Разработка КЖ | КР | КМ.</p>
+            </div>
+
+            <!-- О нас -->
+            <div class="footer__column">
+              <h4 class="footer__title">О нас</h4>
+              <ul class="footer__links">
+                <li><a href="#about-companies">Компании</a></li>
+                <li><a href="#about-us">О компании</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#articles">Статьи</a></li>
+              </ul>
+            </div>
+
+            <!-- Услуги -->
+            <div class="footer__column footer__about">
+              <h4 class="footer__title">Услуги</h4>
+              <ul class="footer__links">
+                <li><a href="#service-kj">Разработка КЖ</a></li>
+                <li><a href="#service-km">Разработка КМ</a></li>
+                <li><a href="#service-ar">Разработка АР</a></li>
+                <li><a href="#service-kr">Разработка КР</a></li>
+              </ul>
+            </div>
+
+            <!-- Контакты -->
+            <div class="footer__column">
+              <h4 class="footer__title">Контакты</h4>
+              <div class="footer__contact-block">
+                <strong>Центральный офис:</strong>
+                <p>г. Воронеж, ул. Владимира Невского, 25/5</p>
+              </div>
+              <div class="footer__contact-block">
+                <strong>Телефон:</strong>
+                <p>+7 (927) 209-20-64</p>
+              </div>
+              <div class="footer__contact-block">
+                <strong>E-mail:</strong>
+                <p>info@monolithex.pro</p>
+              </div>
+              <div class="footer__socials">
+                <a href="#" aria-label="Telegram">
+                  <svg
+                    width="24"
+                    height="20"
+                    viewBox="0 0 24 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.9316 1.82074L20.3099 18.7927C20.0366 19.9905 19.3241 20.2887 18.3115 19.7244L12.7931 15.6837L10.1304 18.2284C9.83572 18.5212 9.58926 18.7661 9.02136 18.7661L9.41782 13.1815L19.6455 3.99813C20.0902 3.60418 19.5491 3.38591 18.9544 3.77986L6.3104 11.6909L0.86706 9.99795C-0.316975 9.63062 -0.338405 8.82141 1.11351 8.2571L22.4047 0.106506C23.3905 -0.26083 24.2531 0.324778 23.9316 1.82074Z"
+                      fill="#18B75C"
+                    />
+                  </svg>
+                </a>
+                <a href="#" aria-label="VK">
+                  <svg
+                    width="24"
+                    height="18"
+                    viewBox="0 0 24 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M23.435 1.25C23.613 0.545 23.435 0.0324998 22.6475 0.0324998H20.029C19.3685 0.0324998 19.0635 0.48125 18.8855 0.96125C18.8855 0.96125 17.5385 5.06125 15.6575 7.71937C15.0475 8.48812 14.768 8.74438 14.4375 8.74438C14.2595 8.74438 14.0305 8.48812 14.0305 7.78375V1.21688C14.0305 0.384375 13.8275 0 13.268 0H9.15001C8.74301 0 8.48901 0.384375 8.48901 0.76875C8.48901 1.56938 9.42951 1.76187 9.53101 4.00375V8.875C9.53101 9.93188 9.38101 10.125 9.04801 10.125C8.15851 10.125 5.99801 5.99312 4.70201 1.285C4.45001 0.3525 4.19401 0 3.533 0H0.889501C0.127 0 0 0.448125 0 0.92875C0 1.79375 0.889501 6.14938 4.14301 11.9144C6.30351 15.8519 9.37901 17.9681 12.1495 17.9681C13.8275 17.9681 14.0305 17.4875 14.0305 16.6869V13.7081C14.0305 12.7475 14.183 12.5875 14.717 12.5875C15.098 12.5875 15.7845 12.8431 17.335 14.7331C19.114 16.975 19.419 18 20.4105 18H23.0285C23.791 18 24.147 17.5194 23.9435 16.5906C23.715 15.6619 22.8505 14.3169 21.732 12.7156C21.122 11.8194 20.207 10.8263 19.9275 10.3456C19.5465 9.705 19.648 9.44875 19.9275 8.8725C19.902 8.8725 23.105 3.17125 23.435 1.2475"
+                      fill="#18B75C"
+                    />
+                  </svg>
+                </a>
+                <a href="#" aria-label="YouTube">
+                  <svg
+                    width="24"
+                    height="20"
+                    viewBox="0 0 24 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8442 4.41642C23.8442 2.0728 22.2924 0.187489 20.375 0.187489C17.7777 0.0520804 15.1289 0 12.4239 0C12.2832 0 12.1426 0 12.002 0C11.8613 0 11.7207 0 11.58 0C8.87964 0 6.22615 0.0520804 3.62892 0.187489C1.71615 0.187489 0.164378 2.08322 0.164378 4.42684C0.0471741 6.2809 -0.00439548 8.13496 0.000292671 9.98903C-0.00439548 11.8431 0.0471741 13.6972 0.15969 15.5564C0.15969 17.9 1.71147 19.801 3.62423 19.801C6.35273 19.9416 9.15156 20.0041 11.9973 19.9989C14.8477 20.0093 17.6371 19.9468 20.3703 19.801C22.2877 19.801 23.8395 17.9 23.8395 15.5564C23.952 13.6972 24.0036 11.8431 23.9989 9.98382C24.0083 8.12976 23.9567 6.27569 23.8442 4.41642ZM9.70476 15.0981V4.86431L16.5026 9.97861L9.70476 15.0981Z"
+                      fill="#18B75C"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
@@ -1089,6 +1499,8 @@
         selector: '.certificate-link',
       });
     </script>
+    <script src="js/copysection.js"></script>
+    <script src="js/slider.js"></script>
     <script src="js/faq.js"></script>
     <script src="js/calc.js"></script>
     <script src="js/main.js"></script>
