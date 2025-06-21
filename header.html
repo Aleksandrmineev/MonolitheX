@@ -1,0 +1,140 @@
+<header class="header">
+  <div class="container">
+    <div class="header__container">
+      <a href="/" class="header__left">
+        <img src="img/icon/logo.png" alt="MonolitheX" class="header__logo" />
+        <span class="header__logo-text">MonolitheX</span>
+      </a>
+
+      <div class="header__location">
+        <button class="header__location-toggle">
+          <span class="header__location-town">Ваш город:</span>
+          <img
+            class="header__location-arrow"
+            src="img/icon/arrowdown.png"
+            alt=""
+          />
+          <span class="header__location-current">Москва </span>
+        </button>
+
+        <div class="header__location-dropdown">
+          <ul>
+            <li><a href="#" data-city="Москва">Москва</a></li>
+            <li>
+              <a href="#" data-city="Санкт-Петербург">Санкт-Петербург</a>
+            </li>
+            <li><a href="#" data-city="Казань">Казань</a></li>
+            <!-- много городов -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- NAV — только меню -->
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li
+            class="header__menu-item header__menu-item--has-popup"
+            data-popup="services"
+          >
+            <a href="#">
+              Услуги
+              <span class="header__menu-arrow">
+                <img src="img/icon/arrowdown.png" alt="" />
+              </span>
+            </a>
+          </li>
+
+          <li class="header__menu-item"><a href="projects.html">Проекты</a></li>
+          <li class="header__menu-item"><a href="#">О нас</a></li>
+          <li class="header__menu-item"><a href="#">Пресс-центр</a></li>
+          <li class="header__menu-item"><a href="#">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <!-- POPUP WRAPPER ВНЕ NAV -->
+      <div class="header__popup-wrapper" data-popup-wrapper="services">
+        <div class="header__popup">
+          <!-- Пункт с подменю -->
+          <div class="header__popup-item-wrapper">
+            <a
+              href="#"
+              class="header__popup-item header__popup-item--has-subpopup"
+            >
+              Проектирование КЖ
+            </a>
+            <span class="header__popup-arrow">
+              <img src="img/icon/arrowright.png" alt="" />
+            </span>
+          </div>
+
+          <!-- Остальные пункты -->
+          <a href="#" class="header__popup-item">Проектирование АР</a>
+          <a href="#" class="header__popup-item">Разработка чертежей КМ</a>
+          <a href="#" class="header__popup-item">Проектирование КР</a>
+        </div>
+
+        <div class="header__subpopup">
+          <div class="header__subpopup-item">
+            <a href="#">Расчет железобетонных конструкций</a>
+          </div>
+          <div class="header__subpopup-item">
+            <a href="#">Проектирование монолитного железобетона</a>
+          </div>
+          <div class="header__subpopup-item">
+            <a href="#">Проектирование железобетонных конструкций</a>
+          </div>
+          <div class="header__subpopup-item">
+            <a href="#">Проектирование свайных фундаментов</a>
+          </div>
+          <div class="header__subpopup-item">
+            <a href="#">Проектирование монолитного железобетона</a>
+          </div>
+          <div class="header__subpopup-item">
+            <a href="#">Проектирование перекрытий</a>
+          </div>
+          <div class="header__subpopup-item">
+            <a href="#">Проектирование оснований и фундаментов</a>
+          </div>
+          <div class="header__subpopup-item">
+            <a href="#">Проектирование фундамента здания</a>
+          </div>
+          <div class="header__subpopup-item">
+            <a href="#">Проектирование железобетонных конструкций</a>
+          </div>
+          <div class="header__subpopup-item">
+            <a href="#">Проектирование бетонных и железобетонных конструкций</a>
+          </div>
+          <div class="header__subpopup-item">
+            <a href="#">Проектирование лестниц</a>
+          </div>
+          <div class="header__subpopup-item">
+            <a href="#">Проектирование пандусов</a>
+          </div>
+          <div class="header__subpopup-item">
+            <a href="#">Разработка КЖ</a>
+          </div>
+          <div class="header__subpopup-item">
+            <a href="#">Проектирование фундаментов</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__contacts">
+        <a href="tel:+79272092060" class="header__contact">
+          <img src="img/icon/phone.png" alt="" class="header__contact-icon" />
+          +7 927-209-20-60
+        </a>
+        <a href="mailto:info@monolithex.pro" class="header__contact">
+          <img src="img/icon/mail.png" alt="" class="header__contact-icon" />
+          info@monolithex.pro
+        </a>
+      </div>
+
+      <button class="header__burger" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

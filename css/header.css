@@ -401,7 +401,7 @@
   visibility: hidden;
 }
 
-.scroll-to-top.is-visible {
+.scroll-to-top.visible {
   opacity: 1;
   visibility: visible;
 }
