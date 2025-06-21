@@ -330,8 +330,10 @@
 .calc-range::-webkit-slider-thumb {
   width: 24px;
   height: 24px;
+  box-shadow: none;
   border: none;
   background: url('../img/icon/arrowcalc.svg') no-repeat center;
+  background-color: transparent;
   background-size: contain;
   cursor: pointer;
   appearance: none;
@@ -341,8 +343,10 @@
 .calc-range::-moz-range-thumb {
   width: 24px;
   height: 24px;
+  box-shadow: none;
   border: none;
   background: url('../img/icon/arrowcalc.svg') no-repeat center;
+  background-color: transparent;
   background-size: contain;
   cursor: pointer;
 }
