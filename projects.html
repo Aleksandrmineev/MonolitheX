@@ -49,8 +49,360 @@
     <div id="header"></div>
 
     <main>
-      <h1>Страница проектов</h1>
-      <!-- тут будет контент -->
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Вы находитесь здесь:">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a href="/" class="breadcrumbs__link">Главная</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__current">Проекты</span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <section class="projects">
+        <div class="container">
+          <h2 class="page-title" id="projects-block">Наши проекты</h2>
+          <div class="projects__container">
+            <aside class="projects-filter-wrapper">
+              <button class="projects-filter__toggle" type="button">
+                Выберите категорию
+                <img
+                  src="img/icon/arrowdown.png"
+                  alt=""
+                  class="projects-filter__toggle-icon"
+                  loading="lazy"
+                />
+              </button>
+
+              <form id="projectsFilterForm">
+                <div class="projects-filter">
+                  <div class="projects-filter__box">
+                    <h3 class="projects-filter__title">Выберите категорию</h3>
+
+                    <ul class="projects-filter__list">
+                      <li class="projects-filter__item">
+                        <label class="projects-filter__label">
+                          <input
+                            type="checkbox"
+                            name="category[]"
+                            value="ceh"
+                            checked
+                          />
+                          <span class="projects-filter__text"
+                            >Цех <span class="count">(2)</span></span
+                          >
+                        </label>
+                      </li>
+                      <li class="projects-filter__item">
+                        <label class="projects-filter__label">
+                          <input
+                            type="checkbox"
+                            name="category[]"
+                            value="ozdor"
+                            checked
+                          />
+                          <span class="projects-filter__text"
+                            >Оздоровительный комплекс
+                            <span class="count">(2)</span></span
+                          >
+                        </label>
+                      </li>
+                      <li class="projects-filter__item">
+                        <label class="projects-filter__label">
+                          <input
+                            type="checkbox"
+                            name="category[]"
+                            value="logistics"
+                          />
+                          <span class="projects-filter__text"
+                            >Логистический центр
+                            <span class="count">(2)</span></span
+                          >
+                        </label>
+                      </li>
+                      <li class="projects-filter__item">
+                        <label class="projects-filter__label">
+                          <input
+                            type="checkbox"
+                            name="category[]"
+                            value="buildings"
+                          />
+                          <span class="projects-filter__text"
+                            >Дома и здания <span class="count">(10)</span></span
+                          >
+                        </label>
+                      </li>
+                      <li class="projects-filter__item">
+                        <label class="projects-filter__label">
+                          <input
+                            type="checkbox"
+                            name="category[]"
+                            value="manezh"
+                          />
+                          <span class="projects-filter__text"
+                            >Манеж <span class="count">(1)</span></span
+                          >
+                        </label>
+                      </li>
+                      <li class="projects-filter__item">
+                        <label class="projects-filter__label">
+                          <input
+                            type="checkbox"
+                            name="category[]"
+                            value="tower"
+                          />
+                          <span class="projects-filter__text"
+                            >Башня <span class="count">(2)</span></span
+                          >
+                        </label>
+                      </li>
+                      <li class="projects-filter__item">
+                        <label class="projects-filter__label">
+                          <input
+                            type="checkbox"
+                            name="category[]"
+                            value="shelter"
+                          />
+                          <span class="projects-filter__text"
+                            >Укрытия <span class="count">(1)</span></span
+                          >
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- 🔽 Кнопки вынесены визуально из рамки, но всё ещё внутри формы -->
+                  <div class="projects-filter__buttons">
+                    <button type="reset" class="button button-secondary">
+                      <span class="button__text">Сбросить</span>
+                    </button>
+                    <button type="submit" class="button button-primary">
+                      <span class="button__text">Применить</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </aside>
+            <div class="projects__content">
+              <article class="project-item">
+                <div class="project-item__image-wrapper">
+                  <img
+                    src="img/content/projects/project1.png"
+                    alt="Цех экстракции масла"
+                    class="project-item__image"
+                    loading="lazy"
+                  />
+                  <div class="project-card__label">
+                    <img
+                      src="img/icon/logo.png"
+                      alt="MonolitheX"
+                      class="project-card__logo"
+                    />
+                    <span class="project-card__brand">MonolitheX</span>
+                  </div>
+                </div>
+
+                <div class="project-item__content">
+                  <h3 class="project-item__title">Цех экстракции масла</h3>
+                  <p class="project-item__excerpt">
+                    Наша команда разработала проект современного цеха экстракции
+                    масла с учётом требований пожарной безопасности,
+                    энергоэффективности и технологического потока. В проекте
+                    предусмотрены автоматизированные системы контроля,
+                    эффективная логистика сырья и продукции, а также гибкость
+                    для масштабирования производственных мощностей.
+                  </p>
+                  <a href="#" class="button button-primary">
+                    <span class="button__text">Подробнее</span>
+                  </a>
+                </div>
+              </article>
+              <article class="project-item">
+                <div class="project-item__image-wrapper">
+                  <img
+                    src="img/content/projects/project1.png"
+                    alt="Цех экстракции масла"
+                    class="project-item__image"
+                    loading="lazy"
+                  />
+                  <div class="project-card__label">
+                    <img
+                      src="img/icon/logo.png"
+                      alt="MonolitheX"
+                      class="project-card__logo"
+                    />
+                    <span class="project-card__brand">MonolitheX</span>
+                  </div>
+                </div>
+
+                <div class="project-item__content">
+                  <h3 class="project-item__title">Цех экстракции масла</h3>
+                  <p class="project-item__excerpt">
+                    Наша команда разработала проект современного цеха экстракции
+                    масла с учётом требований пожарной безопасности,
+                    энергоэффективности и технологического потока. В проекте
+                    предусмотрены автоматизированные системы контроля,
+                    эффективная логистика сырья и продукции, а также гибкость
+                    для масштабирования производственных мощностей.
+                  </p>
+                  <a href="#" class="button button-primary">
+                    <span class="button__text">Подробнее</span>
+                  </a>
+                </div>
+              </article>
+              <article class="project-item">
+                <div class="project-item__image-wrapper">
+                  <img
+                    src="img/content/projects/project1.png"
+                    alt="Цех экстракции масла"
+                    class="project-item__image"
+                    loading="lazy"
+                  />
+                  <div class="project-card__label">
+                    <img
+                      src="img/icon/logo.png"
+                      alt="MonolitheX"
+                      class="project-card__logo"
+                    />
+                    <span class="project-card__brand">MonolitheX</span>
+                  </div>
+                </div>
+
+                <div class="project-item__content">
+                  <h3 class="project-item__title">Цех экстракции масла</h3>
+                  <p class="project-item__excerpt">
+                    Наша команда разработала проект современного цеха экстракции
+                    масла с учётом требований пожарной безопасности,
+                    энергоэффективности и технологического потока. В проекте
+                    предусмотрены автоматизированные системы контроля,
+                    эффективная логистика сырья и продукции, а также гибкость
+                    для масштабирования производственных мощностей.
+                  </p>
+                  <a href="#" class="button button-primary">
+                    <span class="button__text">Подробнее</span>
+                  </a>
+                </div>
+              </article>
+              <article class="project-item">
+                <div class="project-item__image-wrapper">
+                  <img
+                    src="img/content/projects/project1.png"
+                    alt="Цех экстракции масла"
+                    class="project-item__image"
+                    loading="lazy"
+                  />
+                  <div class="project-card__label">
+                    <img
+                      src="img/icon/logo.png"
+                      alt="MonolitheX"
+                      class="project-card__logo"
+                    />
+                    <span class="project-card__brand">MonolitheX</span>
+                  </div>
+                </div>
+
+                <div class="project-item__content">
+                  <h3 class="project-item__title">Цех экстракции масла</h3>
+                  <p class="project-item__excerpt">
+                    Наша команда разработала проект современного цеха экстракции
+                    масла с учётом требований пожарной безопасности,
+                    энергоэффективности и технологического потока. В проекте
+                    предусмотрены автоматизированные системы контроля,
+                    эффективная логистика сырья и продукции, а также гибкость
+                    для масштабирования производственных мощностей.
+                  </p>
+                  <a href="#" class="button button-primary">
+                    <span class="button__text">Подробнее</span>
+                  </a>
+                </div>
+              </article>
+              <article class="project-item">
+                <div class="project-item__image-wrapper">
+                  <img
+                    src="img/content/projects/project1.png"
+                    alt="Цех экстракции масла"
+                    class="project-item__image"
+                    loading="lazy"
+                  />
+                  <div class="project-card__label">
+                    <img
+                      src="img/icon/logo.png"
+                      alt="MonolitheX"
+                      class="project-card__logo"
+                    />
+                    <span class="project-card__brand">MonolitheX</span>
+                  </div>
+                </div>
+
+                <div class="project-item__content">
+                  <h3 class="project-item__title">Цех экстракции масла</h3>
+                  <p class="project-item__excerpt">
+                    Наша команда разработала проект современного цеха экстракции
+                    масла с учётом требований пожарной безопасности,
+                    энергоэффективности и технологического потока. В проекте
+                    предусмотрены автоматизированные системы контроля,
+                    эффективная логистика сырья и продукции, а также гибкость
+                    для масштабирования производственных мощностей.
+                  </p>
+                  <a href="#" class="button button-primary">
+                    <span class="button__text">Подробнее</span>
+                  </a>
+                </div>
+              </article>
+              <article class="project-item">
+                <div class="project-item__image-wrapper">
+                  <img
+                    src="img/content/projects/project1.png"
+                    alt="Цех экстракции масла"
+                    class="project-item__image"
+                    loading="lazy"
+                  />
+                  <div class="project-card__label">
+                    <img
+                      src="img/icon/logo.png"
+                      alt="MonolitheX"
+                      class="project-card__logo"
+                    />
+                    <span class="project-card__brand">MonolitheX</span>
+                  </div>
+                </div>
+
+                <div class="project-item__content">
+                  <h3 class="project-item__title">Цех экстракции масла</h3>
+                  <p class="project-item__excerpt">
+                    Наша команда разработала проект современного цеха экстракции
+                    масла с учётом требований пожарной безопасности,
+                    энергоэффективности и технологического потока. В проекте
+                    предусмотрены автоматизированные системы контроля,
+                    эффективная логистика сырья и продукции, а также гибкость
+                    для масштабирования производственных мощностей.
+                  </p>
+                  <a href="#" class="button button-primary">
+                    <span class="button__text">Подробнее</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+          <nav class="projects-pagination">
+            <ul class="projects-pagination__list">
+              <li>
+                <button class="projects-pagination__prev" disabled>&lt;</button>
+              </li>
+              <li>
+                <button class="projects-pagination__page is-active">1</button>
+              </li>
+              <li>
+                <button class="projects-pagination__page">2</button>
+              </li>
+              <li>
+                <button class="projects-pagination__next">&gt;</button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
     </main>
 
     <div id="footer"></div>
@@ -63,6 +415,7 @@
       });
     </script>
     <script src="js/copysection.js"></script>
+    <script src="js/projects-filter.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/faq.js"></script>
     <script src="js/calc.js"></script>

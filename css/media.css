@@ -390,6 +390,18 @@
   .footer__dienst {
     display: none;
   }
+
+  .project-item {
+    flex-direction: column;
+  }
+
+  .project-item__image-wrapper {
+    max-width: 100%;
+  }
+
+  .project-item__content {
+    max-width: 100%;
+  }
 }
 
 /* @media (width <= 500px) {
