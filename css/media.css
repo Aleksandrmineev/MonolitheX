@@ -402,6 +402,10 @@
   .project-item__content {
     max-width: 100%;
   }
+
+  .project-features {
+    flex-direction: column;
+  }
 }
 
 /* @media (width <= 500px) {
