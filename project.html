@@ -69,9 +69,12 @@
         <!-- Главный экран с заголовком проекта -->
         <section class="project-hero">
           <h1 class="project-title">Цех экстракции масла</h1>
-          <a href="#" class="button button-primary"
-            ><span class="button__text">Заказать сейчас</span></a
+          <button
+            class="button button-primary"
+            data-open-modal="#contact-modal"
           >
+            Заказать сейчас
+          </button>
         </section>
         <!-- Описание, картинка, блок с характеристиками -->
         <section class="project-content">
@@ -242,6 +245,30 @@
     <div id="footer"></div>
     <div id="floating-ui"></div>
 
+    <div class="modal" id="contact-modal">
+      <div class="modal__overlay" data-close-modal></div>
+      <div class="modal__content">
+        <form class="hero__form">
+          <button class="modal__close" aria-label="Закрыть" data-close-modal>
+            <img src="img/icon/close.png" alt="кнопка закрыть" />
+          </button>
+          <h3 class="form__title">Связаться с нами</h3>
+          <input type="text" placeholder="Имя" name="name" required />
+          <input type="tel" placeholder="Телефон" name="phone" required />
+          <input type="email" placeholder="E-mail" name="email" required />
+          <label class="form__agreement">
+            <input type="checkbox" required />
+            Нажимая на кнопку, я принимаю условия
+            <a href="/policy" target="_blank" class="form__link">соглашения</a>.
+          </label>
+          <button type="submit" class="button button-primary">
+            <span class="button__text">Отправить</span>
+          </button>
+          <a href="#" class="form__report-link">Сообщить о нарушении</a>
+        </form>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
       const lightbox = GLightbox({
@@ -250,9 +277,9 @@
     </script>
     <script src="js/copysection.js"></script>
     <script src="js/projects-filter.js"></script>
+    <script src="js/modal.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/faq.js"></script>
-    <script src="js/calc.js"></script>
     <script type="module" src="js/main.js"></script>
   </body>
 </html>

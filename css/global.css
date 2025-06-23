@@ -185,6 +185,7 @@ body {
   text-decoration: none;
   cursor: pointer;
   user-select: none;
+  color: var(--clr-white);
 }
 
 .button__text {
