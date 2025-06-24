@@ -76,3 +76,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 });
+
+// Слайдер в проекте
+document.addEventListener('DOMContentLoaded', () => {
+  const wrapper = document.querySelector('.project-gallery__wrapper');
+  const prevBtn = document.querySelector('.slider-arrow--prev');
+  const nextBtn = document.querySelector('.slider-arrow--next');
+
+  if (!wrapper || !prevBtn || !nextBtn) return;
+
+  function getCardWidth() {
+    const firstCard = wrapper.querySelector('a');
+    if (!firstCard) return 0;
+    const gap = parseInt(getComputedStyle(wrapper).gap) || 0;
+    return firstCard.offsetWidth + gap;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    wrapper.scrollBy({
+      left: -getCardWidth(),
+      behavior: 'smooth',
+    });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    wrapper.scrollBy({
+      left: getCardWidth(),
+      behavior: 'smooth',
+    });
+  });
+});

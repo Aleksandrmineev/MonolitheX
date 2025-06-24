@@ -113,30 +113,73 @@
           <div class="project-media">
             <!-- Галерея с Glightbox -->
             <div class="project-gallery">
-              <!-- Виден на странице -->
-              <a
-                href="img/content/fotomain.png"
-                class="glightbox"
-                data-gallery="project"
+              <!-- Стрелка влево -->
+              <button
+                class="slider-arrow slider-arrow--prev"
+                aria-label="Назад"
               >
-                <img
-                  src="img/content/towerform.png"
-                  alt="Изображение проекта"
-                />
-              </a>
+                <svg
+                  width="15"
+                  height="20"
+                  viewBox="0 0 15 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.13333 8.4L11.8 0.4C13.1185 -0.588854 15 0.35191 15 2L15 18C15 19.6481 13.1185 20.5889 11.8 19.6L1.13333 11.6C0.0666666 10.8 0.0666666 9.2 1.13333 8.4Z"
+                    fill="#18B75C"
+                  />
+                </svg>
+              </button>
 
-              <!-- Скрытые элементы для модального просмотра -->
-              <a
-                href="https://www.w3schools.com/html/mov_bbb.mp4"
-                class="glightbox visually-hidden"
-                data-gallery="project"
-              ></a>
+              <div class="project-gallery__wrapper">
+                <a
+                  href="img/content/logobig.png"
+                  class="glightbox"
+                  data-gallery="project"
+                >
+                  <img
+                    src="img/content/logobig.png"
+                    alt="Изображение проекта"
+                  />
+                </a>
+                <a
+                  href="https://www.w3schools.com/html/mov_bbb.mp4"
+                  class="glightbox"
+                  data-gallery="project"
+                >
+                  <img src="img/content/logobig.png" alt="Видео превью" />
+                </a>
+                <a
+                  href="img/content/trebovaniya.png"
+                  class="glightbox"
+                  data-gallery="project"
+                >
+                  <img
+                    src="img/content/trebovaniya.png"
+                    alt="Изображение проекта"
+                  />
+                </a>
+              </div>
 
-              <a
-                href="img/content/photo2.png"
-                class="glightbox visually-hidden"
-                data-gallery="project"
-              ></a>
+              <!-- Стрелка вправо -->
+              <button
+                class="slider-arrow slider-arrow--next"
+                aria-label="Вперёд"
+              >
+                <svg
+                  width="15"
+                  height="20"
+                  viewBox="0 0 15 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.8667 11.6L3.2 19.6C1.88153 20.5889 0 19.6481 0 18L0 2C0 0.35191 1.88153 -0.588856 3.2 0.4L13.8667 8.4C14.9333 9.2 14.9333 10.8 13.8667 11.6Z"
+                    fill="#18B75C"
+                  />
+                </svg>
+              </button>
             </div>
 
             <!-- Блок характеристик -->
