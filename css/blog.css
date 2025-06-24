@@ -1,0 +1,62 @@
+/* Сетка карточек в блог-стиле */
+.blog__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 10px;
+  gap: 32px;
+}
+
+/* Базовая карточка для статей */
+.project-item--blog {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  padding: 20px;
+  opacity: 1;
+  transform: none;
+  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-default);
+  border: 1px solid var(--clr-border-alt);
+  border-radius: var(--radius-main);
+  background-color: var(--clr-white);
+  gap: 8px;
+}
+
+.project-item--blog .project-item__image-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--clr-border-alt);
+  border-radius: var(--radius-main);
+  aspect-ratio: 16 / 9;
+}
+
+.project-item--blog .project-item__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: none;
+  height: 100%;
+  gap: 12px;
+}
+
+.project-item--blog .project-item__title {
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.project-item--blog .project-item__excerpt {
+  display: block;
+  max-height: none;
+  margin-bottom: 0;
+  color: var(--clr-text-muted);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-150);
+  -webkit-line-clamp: unset;
+}
+
+.project-item__content a.button {
+  width: 100%;
+  margin-top: auto;
+}

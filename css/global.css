@@ -217,15 +217,7 @@ body {
   border: 1px solid var(--clr-border);
   border-radius: 8px;
   background-color: var(--btn-color-white);
-}
-
-/* stylelint-disable-next-line no-descending-specificity */
-.button-secondary .button__text {
-  color: var(--clr-text-main); /* Normal — #151515 */
-}
-
-.button-secondary:hover .button__text {
-  color: var(--clr-text-main); /* Hover — без изменений */
+  color: var(--clr-text-main);
 }
 
 .button-secondary:active .button__text {
