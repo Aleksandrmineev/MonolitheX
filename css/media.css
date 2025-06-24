@@ -268,6 +268,53 @@
   .custom-projects__grid {
     grid-template-columns: auto;
   }
+
+  .about-intro__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .about-intro__texttop {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .about-intro__image {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    aspect-ratio: 16 / 9; /* по желанию, можно адаптировать */
+  }
+
+  .about-intro__textbottom {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .about-intro__list {
+    column-count: 2;
+    column-gap: 24px; /* можно изменить отступ между колонками */
+  }
+
+  .about-mission__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-details__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .about-details__visual {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .about-details__button {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    margin-top: 20px;
+    justify-self: center;
+  }
 }
 
 @media (width <= 720px) {
@@ -405,6 +452,19 @@
 
   .project-features {
     flex-direction: column;
+  }
+
+  .about-intro__list {
+    column-count: 1;
+    column-gap: 24px; /* можно изменить отступ между колонками */
+  }
+
+  .about-leader__card {
+    flex-direction: column;
+  }
+
+  .about-mission__grid {
+    grid-template-columns: 1fr;
   }
 }
 

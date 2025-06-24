@@ -65,31 +65,31 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  max-width: 100%;
   border: 1px solid var(--clr-border-alt);
   border-radius: var(--radius-main);
   color: var(--clr-bg);
-  gap: 12px;
-  max-width: 100%;
   aspect-ratio: 3 / 2;
+  gap: 12px;
 }
 
 .project-gallery__wrapper {
   display: flex;
-  scroll-behavior: smooth;
-  gap: 20px;
-  flex-grow: 1;
   overflow: hidden;
+  flex-grow: 1;
+  gap: 20px;
+  scroll-behavior: smooth;
 }
 
 .project-gallery__wrapper a {
+  display: block;
   flex: 0 0 100%;
   width: 100%;
-  display: block;
   overflow: hidden;
   box-shadow: var(--shadow-default);
   border-radius: var(--radius-main);
-  aspect-ratio: 3 / 2;
   background-color: var(--clr-bg);
+  aspect-ratio: 3 / 2;
 }
 
 .project-gallery img {

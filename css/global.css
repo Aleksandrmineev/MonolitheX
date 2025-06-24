@@ -29,7 +29,7 @@
   --fs-body: clamp(14px, 1.5vw, 16px);
   --fs-body-small: clamp(
     12px,
-    1vw,
+    1.5vw,
     14px
   ); /* мелкий текст в карточках, списках */
 
@@ -129,6 +129,7 @@ h1 {
   color: var(--clr-text-main);
   font-family: var(--font-family-alt);
   font-size: var(--fs-h1);
+  font-weight: 600;
   line-height: var(--lh-120);
   text-transform: uppercase;
 }
