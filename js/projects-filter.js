@@ -96,4 +96,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showPage(1);
   }
+
+  // Поддержка нескольких фильтров (например, в статье и пресс-центре)
+  document.querySelectorAll('.projects-filter__toggle').forEach((btn) => {
+    const nextFilterBox = btn.nextElementSibling;
+
+    if (nextFilterBox && nextFilterBox.classList.contains('filter-box')) {
+      btn.addEventListener('click', () => {
+        nextFilterBox.classList.toggle('is-open');
+        btn.classList.toggle('active');
+      });
+    }
+  });
 });

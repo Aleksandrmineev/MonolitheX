@@ -319,6 +319,75 @@
     margin-top: 20px;
     justify-self: center;
   }
+
+  .filter-box {
+    max-height: 0;
+    margin-top: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, max-height 0.4s ease, padding 0.3s ease,
+      margin-top 0.3s ease;
+    pointer-events: none;
+  }
+
+  .filter-box.is-open {
+    max-height: 1000px; /* можно задать больше при необходимости */
+    margin-top: 16px;
+    padding: 16px 12px;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .projects-filter__toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    border: 1px solid var(--clr-border-alt);
+    border-radius: var(--radius-main);
+    background: var(--clr-white);
+    font-size: var(--fs-body);
+    cursor: pointer;
+    gap: 8px;
+  }
+
+  .projects-filter__toggle-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .projects-filter__toggle.active .projects-filter__toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  .article-content__wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'sidebar'
+      'main';
+  }
+
+  .article__sidebar {
+    position: static; /* отключаем sticky */
+  }
+
+  .checklist-modal__wrapper {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .checklist-modal__image {
+    display: none;
+  }
+
+  .blog-single .header__location-town,
+  .blog-single .header__location-current {
+    color: var(--clr-accent);
+  }
 }
 
 @media (width <= 720px) {
@@ -473,6 +542,15 @@
 
   .blog__content {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .blog-single-hero__right {
+    flex-direction: column;
+  }
+
+  .blog-single .header__location-town,
+  .blog-single .header__location-current {
+    color: var(--clr-white);
   }
 }
 

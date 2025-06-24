@@ -110,6 +110,27 @@ document.addEventListener('DOMContentLoaded', () => {
       const clone2 = template.content.cloneNode(true);
       insert2.appendChild(clone2);
     }
+
+    // Вставка в .form-placeholder
+    const inlinePlaceholders = document.querySelectorAll(
+      '.form-placeholder[data-form="inline"]'
+    );
+
+    inlinePlaceholders.forEach((placeholder) => {
+      const clone = template.content.cloneNode(true);
+      placeholder.replaceWith(clone);
+    });
+
+    // ВСТАВКА ПЕРЕД ПОСЛЕДНИМ H2 В article__main
+    const article = document.querySelector('.article__main');
+    if (article) {
+      const h2s = article.querySelectorAll('h2');
+      if (h2s.length > 0) {
+        const lastH2 = h2s[h2s.length - 2];
+        const clone = template.content.cloneNode(true);
+        article.insertBefore(clone, lastH2); // ✅ корректно вставляет DocumentFragment
+      }
+    }
   }
 
   // ===================
