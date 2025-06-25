@@ -302,12 +302,49 @@
           <label class="form__agreement">
             <input type="checkbox" required />
             Нажимая на кнопку, я принимаю условия
-            <a href="/policy" target="_blank" class="form__link">соглашения</a>.
+            <a href="policy.html" target="_blank" class="form__link"
+              >соглашения</a
+            >.
           </label>
           <button type="submit" class="button button-primary">
             <span class="button__text">Отправить</span>
           </button>
-          <a href="#" class="form__report-link">Сообщить о нарушении</a>
+          <a href="#" class="form__report-link open-report-modal"
+            >Сообщить о нарушении</a
+          >
+        </form>
+      </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО СООБЩИТЬ О НАРУШЕНИИ -->
+    <div class="modal" id="reportModal">
+      <div class="modal__overlay"></div>
+      <div class="modal__content">
+        <button class="modal__close" aria-label="Закрыть окно">
+          <img src="/img/icon/close.png" alt="Закрыть" width="24" height="24" />
+        </button>
+        <h2 class="modal__title">Сообщить о нарушении</h2>
+        <form class="modal__form" id="reportForm">
+          <label>
+            <span>Тема обращения</span>
+            <select name="topic" required>
+              <option value="">Выберите...</option>
+              <option value="offensive">Оскорбительный контент</option>
+              <option value="incorrect">Неверная информация</option>
+              <option value="other">Другое</option>
+            </select>
+          </label>
+          <label>
+            <span>Сообщение</span>
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <label>
+            <span>Email (необязательно)</span>
+            <input type="email" name="email" />
+          </label>
+          <button type="submit" class="button button-primary">
+            <span class="button__text">Отправить</span>
+          </button>
         </form>
       </div>
     </div>
@@ -319,6 +356,7 @@
       });
     </script>
     <script src="js/copysection.js"></script>
+    <script src="js/modal.js"></script>
     <script src="js/projects-filter.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/slider.js"></script>

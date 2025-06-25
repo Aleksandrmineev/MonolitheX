@@ -95,14 +95,16 @@
               <label class="form__agreement">
                 <input type="checkbox" required />
                 Нажимая на кнопку, я принимаю условия
-                <a href="/policy" target="_blank" class="form__link"
+                <a href="policy.html" target="_blank" class="form__link"
                   >соглашения</a
                 >.
               </label>
               <button type="submit" class="button button-primary">
                 <span class="button__text">Отправить</span>
               </button>
-              <a href="#" class="form__report-link">Сообщить о нарушении</a>
+              <a href="#" class="form__report-link open-report-modal"
+                >Сообщить о нарушении</a
+              >
             </form>
           </div>
         </div>
@@ -298,18 +300,36 @@
 
             <h2 id="checklist">7 правил закупок</h2>
             <p>
-              Закупка арматуры — один из ключевых этапов в строительстве, где ошибки могут обернуться перерасходом бюджета или срывом сроков. Мы подготовили краткий чек-лист, который поможет избежать наиболее распространённых проблем.
+              Закупка арматуры — один из ключевых этапов в строительстве, где
+              ошибки могут обернуться перерасходом бюджета или срывом сроков. Мы
+              подготовили краткий чек-лист, который поможет избежать наиболее
+              распространённых проблем.
             </p>
             <ul>
-              <li>Проверяйте соответствие марки арматуры проектной документации.</li>
-              <li>Уточняйте точный вес и способ отпуска (по массе или метражу).</li>
-              <li>Сравнивайте цены с учётом доставки, хранения и возможных наценок.</li>
-              <li>Проверяйте документы: сертификаты качества, паспорта на продукцию.</li>
+              <li>
+                Проверяйте соответствие марки арматуры проектной документации.
+              </li>
+              <li>
+                Уточняйте точный вес и способ отпуска (по массе или метражу).
+              </li>
+              <li>
+                Сравнивайте цены с учётом доставки, хранения и возможных
+                наценок.
+              </li>
+              <li>
+                Проверяйте документы: сертификаты качества, паспорта на
+                продукцию.
+              </li>
               <li>Уточняйте сроки поставки и наличие товара на складе.</li>
-              <li>Оценивайте надёжность поставщика: отзывы, опыт, юридическая информация.</li>
-              <li>Фиксируйте договором все условия: цену, сроки, штрафы за просрочку.</li>
+              <li>
+                Оценивайте надёжность поставщика: отзывы, опыт, юридическая
+                информация.
+              </li>
+              <li>
+                Фиксируйте договором все условия: цену, сроки, штрафы за
+                просрочку.
+              </li>
             </ul>
-            
 
             <!-- Здесь будет вставлена форма автоматически -->
           </article>
@@ -453,9 +473,8 @@
       <div class="modal modal-checklist" id="checklistModal">
         <div class="modal__overlay"></div>
         <div class="modal__content">
-            <button class="modal__close" aria-label="Закрыть модалку">
-                <img src="img/icon/close.png" alt="Закрыть" />
-              </button>
+          <button class="modal__close" aria-label="Закрыть модалку">
+            <img src="img/icon/close.png" alt="Закрыть" />
           </button>
           <div class="checklist-modal__wrapper">
             <div class="checklist-modal__info">
@@ -466,10 +485,8 @@
               <p class="checklist-modal__subtitle">
                 80% переплачивают за металлопрокат — проверьте себя
               </p>
-              <p class="checklist-modal__subtitle2">
-                Что внутри чек-листа:
-              </p>
-              
+              <p class="checklist-modal__subtitle2">Что внутри чек-листа:</p>
+
               <ul class="checklist-modal__list">
                 <li>
                   7 критических ошибок, из-за которых компании теряют сотни
@@ -508,6 +525,44 @@
         </div>
       </div>
 
+      <!-- МОДАЛЬНОЕ ОКНО СООБЩИТЬ О НАРУШЕНИИ -->
+      <div class="modal" id="reportModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+          <button class="modal__close" aria-label="Закрыть окно">
+            <img
+              src="/img/icon/close.png"
+              alt="Закрыть"
+              width="24"
+              height="24"
+            />
+          </button>
+          <h2 class="modal__title">Сообщить о нарушении</h2>
+          <form class="modal__form" id="reportForm">
+            <label>
+              <span>Тема обращения</span>
+              <select name="topic" required>
+                <option value="">Выберите...</option>
+                <option value="offensive">Оскорбительный контент</option>
+                <option value="incorrect">Неверная информация</option>
+                <option value="other">Другое</option>
+              </select>
+            </label>
+            <label>
+              <span>Сообщение</span>
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <label>
+              <span>Email (необязательно)</span>
+              <input type="email" name="email" />
+            </label>
+            <button type="submit" class="button button-primary">
+              <span class="button__text">Отправить</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
       <template id="form-template">
         <section class="form-section">
           <div class="container form-section__container">
@@ -534,14 +589,16 @@
                   <label class="form__agreement">
                     <input type="checkbox" required />
                     Нажимая на кнопку, я принимаю условия
-                    <a href="/policy" target="_blank" class="form__link"
+                    <a href="policy.html" target="_blank" class="form__link"
                       >соглашения</a
                     >.
                   </label>
                   <button type="submit" class="button button-primary">
                     <span class="button__text">Отправить</span>
                   </button>
-                  <a href="#" class="form__report-link">Сообщить о нарушении</a>
+                  <a href="#" class="form__report-link open-report-modal"
+                    >Сообщить о нарушении</a
+                  >
                 </form>
               </div>
 
@@ -563,6 +620,7 @@
       });
     </script>
     <script src="js/copysection.js"></script>
+    <script src="js/modal.js"></script>
     <script src="js/projects-filter.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/single.js"></script>

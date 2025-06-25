@@ -969,3 +969,75 @@
     right: -10px;
   }
 }
+
+/* МОДАЛЬНОЕ ОКНО СООБЩИТЬ О НАРУШЕНИИ */
+.modal {
+  position: fixed;
+  z-index: 999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal__overlay {
+  position: absolute;
+  z-index: 1;
+  background: rgb(255 255 255 / 60%);
+  backdrop-filter: blur(4px);
+  inset: 0;
+}
+
+.modal__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 500px;
+  padding: 32px;
+  box-shadow: var(--shadow-default);
+  border-radius: var(--radius-main);
+  background: var(--clr-bg);
+}
+
+.modal__title {
+  margin-bottom: 20px;
+  font-size: var(--fs-h2);
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal__form label {
+  display: flex;
+  flex-direction: column;
+  color: var(--clr-text-main);
+  font-size: var(--fs-body-small);
+  gap: 6px;
+}
+
+.modal__form input,
+.modal__form textarea,
+.modal__form select {
+  padding: 10px 12px;
+  border: 1px solid var(--clr-border-alt);
+  border-radius: var(--radius-btn);
+  font-family: var(--font-family-base);
+  font-size: var(--fs-body-small);
+}
+
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
