@@ -13,7 +13,7 @@
     <link
       rel="icon"
       type="image/png"
-      href="img/icon/favicon-96x96.png"
+      href="img/icon/favicon-96x96.webp"
       sizes="96x96"
     />
     <link rel="icon" type="image/svg+xml" href="img/icon/favicon.svg" />
@@ -21,13 +21,18 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="img/icon/apple-touch-icon.png"
+      href="img/icon/apple-touch-icon.webp"
     />
     <link rel="manifest" href="img/icon/site.webmanifest" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="fonts/Manrope-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="css/fonts.css" />
 
     <!-- Styles -->
@@ -67,7 +72,7 @@
           <button class="projects-filter__toggle" type="button">
             Выберите категорию
             <img
-              src="img/icon/arrowdown.png"
+              src="img/icon/arrowdown.webp"
               alt=""
               class="projects-filter__toggle-icon"
               loading="lazy"
@@ -143,7 +148,7 @@
           <div class="project-item project-item--blog visible">
             <div class="project-item__image-wrapper">
               <img
-                src="img/content/blog/blogitem.png"
+                src="img/content/blog/blogitem.webp"
                 alt="Армирование конструкций"
                 class="project-item__image"
               />
@@ -161,7 +166,7 @@
           <div class="project-item project-item--blog visible">
             <div class="project-item__image-wrapper">
               <img
-                src="img/content/blog/blogitem.png"
+                src="img/content/blog/blogitem.webp"
                 alt="Армирование конструкций"
                 class="project-item__image"
               />
@@ -177,7 +182,7 @@
           <div class="project-item project-item--blog visible">
             <div class="project-item__image-wrapper">
               <img
-                src="img/content/blog/blogitem.png"
+                src="img/content/blog/blogitem.webp"
                 alt="Армирование конструкций"
                 class="project-item__image"
               />
@@ -193,7 +198,7 @@
           <div class="project-item project-item--blog visible">
             <div class="project-item__image-wrapper">
               <img
-                src="img/content/blog/blogitem.png"
+                src="img/content/blog/blogitem.webp"
                 alt="Армирование конструкций"
                 class="project-item__image"
               />
@@ -209,7 +214,7 @@
           <div class="project-item project-item--blog visible">
             <div class="project-item__image-wrapper">
               <img
-                src="img/content/blog/blogitem.png"
+                src="img/content/blog/blogitem.webp"
                 alt="Армирование конструкций"
                 class="project-item__image"
               />
@@ -225,7 +230,7 @@
           <div class="project-item project-item--blog visible">
             <div class="project-item__image-wrapper">
               <img
-                src="img/content/blog/blogitem.png"
+                src="img/content/blog/blogitem.webp"
                 alt="Армирование конструкций"
                 class="project-item__image"
               />
@@ -250,7 +255,7 @@
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
       const lightbox = GLightbox({
-        selector: '.certificate-link',
+        selector: ".certificate-link",
       });
     </script>
     <script src="js/copysection.js"></script>

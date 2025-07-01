@@ -44,7 +44,7 @@
   position: absolute;
   z-index: -1;
   margin-top: -250px;
-  background: url('../img/content/single/singlebg.png') center/cover no-repeat;
+  background: url("../img/content/single/singlebg.webp") center/cover no-repeat;
   filter: brightness(1);
   inset: 0;
 }
@@ -141,9 +141,9 @@
   font-weight: bold;
 }
 
-.form-hero__form input[type='text'],
-.form-hero__form input[type='tel'],
-.form-hero__form input[type='email'] {
+.form-hero__form input[type="text"],
+.form-hero__form input[type="tel"],
+.form-hero__form input[type="email"] {
   width: 100%;
   margin-bottom: 12px;
   padding: 12px;
@@ -166,7 +166,7 @@
   align-items: start;
   grid-template-columns: 3fr 1fr;
   gap: 40px;
-  grid-template-areas: 'main sidebar ';
+  grid-template-areas: "main sidebar ";
 }
 
 .article__main {
@@ -297,7 +297,7 @@
   margin-left: 12px;
   color: var(--clr-text-muted);
   font-size: 18px;
-  content: '›';
+  content: "›";
 }
 
 .toc-list a:hover {
@@ -316,7 +316,7 @@
 }
 
 .toc-checklist a::after {
-  content: '';
+  content: "";
 }
 
 .toc-checklist .pdf-icon {
@@ -409,7 +409,7 @@
   border: 1px solid #999;
   border-radius: 50%;
   background-color: #fff;
-  content: '';
+  content: "";
 }
 
 /* ВИДЖЕТ ПРОЕКТЫ */
@@ -451,7 +451,7 @@
   background-color: var(--clr-bg-light);
 }
 
-.project-card[data-hidden='true'] {
+.project-card[data-hidden="true"] {
   display: none;
 }
 
@@ -619,7 +619,7 @@
   gap: 16px;
 }
 
-.checklist-modal__form input[type='email'] {
+.checklist-modal__form input[type="email"] {
   padding: var(--btn-padding);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-btn);

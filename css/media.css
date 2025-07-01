@@ -129,8 +129,8 @@
     background-color: var(--clr-bg);
     gap: 0;
     grid-template-areas:
-      'subpopup'
-      'popup';
+      "subpopup"
+      "popup";
   }
 
   .header__popup {
@@ -365,8 +365,8 @@
   .article-content__wrapper {
     grid-template-columns: 1fr;
     grid-template-areas:
-      'sidebar'
-      'main';
+      "sidebar"
+      "main";
   }
 
   .article__sidebar {
@@ -487,8 +487,8 @@
     z-index: -1;
     width: 150px;
     height: 150px;
-    background: url('../img/icon/logobefore.png') no-repeat center/contain;
-    content: '';
+    background: url("../img/icon/logobefore.webp") no-repeat center/contain;
+    content: "";
   }
 
   /* Зелёный логотип */
@@ -499,8 +499,8 @@
     z-index: -1;
     width: 130px;
     height: 130px;
-    background: url('../img/icon/logoafter.png') no-repeat center/contain;
-    content: '';
+    background: url("../img/icon/logoafter.webp") no-repeat center/contain;
+    content: "";
   }
 
   .services__grid {
