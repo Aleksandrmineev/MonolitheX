@@ -1179,54 +1179,49 @@
         </section>
 
         <!-- КОПИЯ СЕКЦИИ С ФОРМОЙ-->
-        <div id="insert-form-section-2"></div>
+        <section class="form-section">
+          <div class="container form-section__container">
+            <div class="form-section__grid">
+              <!-- Левая часть — форма -->
+              <div class="form-block" id="contact">
+                <h3 class="form-block__title"></h3>
 
-        <!-- СЕКЦИЯ С ФОРМОЙ, ПОВТОРЯЮЩАЯСЯ -->
-        <template id="form-template">
-          <section class="form-section">
-            <div class="container form-section__container">
-              <div class="form-section__grid">
-                <!-- Левая часть — форма -->
-                <div class="form-block" id="contact">
-                  <h3 class="form-block__title"></h3>
-
-                  <form class="hero__form">
-                    <h3 class="form__title">Связаться с нами</h3>
-                    <input type="text" placeholder="Имя" name="name" required />
-                    <input
-                      type="tel"
-                      placeholder="Телефон"
-                      name="phone"
-                      required
-                    />
-                    <input
-                      type="email"
-                      placeholder="E-mail"
-                      name="email"
-                      required
-                    />
-                    <label class="form__agreement">
-                      <input type="checkbox" required />
-                      Нажимая на кнопку, я принимаю условия
-                      <a href="policy.html" target="_blank" class="form__link"
-                        >соглашения</a
-                      >.
-                    </label>
-                    <button type="submit" class="button button-primary">
-                      <span class="button__text">Отправить</span>
-                    </button>
-                    <a href="#" class="form__report-link open-report-modal"
-                      >Сообщить о нарушении</a
-                    >
-                  </form>
-                </div>
-
-                <!-- Правая часть — placeholder для картинки -->
-                <div class="form-section__image-placeholder"></div>
+                <form class="hero__form">
+                  <h3 class="form__title">Связаться с нами</h3>
+                  <input type="text" placeholder="Имя" name="name" required />
+                  <input
+                    type="tel"
+                    placeholder="Телефон"
+                    name="phone"
+                    required
+                  />
+                  <input
+                    type="email"
+                    placeholder="E-mail"
+                    name="email"
+                    required
+                  />
+                  <label class="form__agreement">
+                    <input type="checkbox" required />
+                    Нажимая на кнопку, я принимаю условия
+                    <a href="policy.html" target="_blank" class="form__link"
+                      >соглашения</a
+                    >.
+                  </label>
+                  <button type="submit" class="button button-primary">
+                    <span class="button__text">Отправить</span>
+                  </button>
+                  <a href="#" class="form__report-link open-report-modal"
+                    >Сообщить о нарушении</a
+                  >
+                </form>
               </div>
+
+              <!-- Правая часть — placeholder для картинки -->
+              <div class="form-section__image-placeholder"></div>
             </div>
-          </section>
-        </template>
+          </div>
+        </section>
 
         <!-- МОДАЛЬНОЕ ОКНО СООБЩИТЬ О НАРУШЕНИИ -->
         <div class="modal" id="reportModal">

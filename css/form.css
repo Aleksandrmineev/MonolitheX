@@ -22,9 +22,9 @@
   border-bottom: 1px solid #d9d9d9;
 }
 
-.hero__form input[type='text'],
-.hero__form input[type='tel'],
-.hero__form input[type='email'] {
+.hero__form input[type="text"],
+.hero__form input[type="tel"],
+.hero__form input[type="email"] {
   padding: 12px;
   border: 1px solid var(--clr-border);
   border-radius: 10px;
@@ -33,6 +33,7 @@
 
 .form__agreement {
   display: flex;
+  font: 400 14px/1.4 "Manrope", sans-serif;
   align-items: center;
   color: var(--clr-text-muted);
   font-size: clamp(10px, 12px, 12px);
