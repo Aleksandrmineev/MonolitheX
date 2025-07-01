@@ -56,6 +56,14 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
     />
+
+    <!-- preload -->
+    <link
+      rel="preload"
+      as="image"
+      href="img/content/banner.webp"
+      type="image/webp"
+    />
   </head>
 
   <body>
@@ -1267,17 +1275,20 @@
       <!-- ПЛАВАЮЩИЕ КНОПКИ отдельным файлом -->
       <div id="floating-ui"></div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"
+      defer
+    ></script>
+    <script defer>
       const lightbox = GLightbox({
         selector: ".certificate-link",
       });
     </script>
-    <script src="js/copysection.js"></script>
-    <script src="js/modal.js"></script>
-    <script src="js/slider.js"></script>
-    <script src="js/faq.js"></script>
-    <script src="js/calc.js"></script>
+    <script src="js/copysection.js" defer></script>
+    <script src="js/modal.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <script src="js/faq.js" defer></script>
+    <script src="js/calc.js" defer></script>
     <script type="module" src="js/main.js"></script>
   </body>
 </html>
