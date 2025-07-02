@@ -50,6 +50,13 @@
 
     <!-- Галерея -->
     <link rel="stylesheet" href="css/glightbox.min.css" />
+
+    <!-- 2гис -->
+    <link
+      rel="stylesheet"
+      href="https://maps.api.2gis.ru/2.0/loader/css/2gis.css"
+    />
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
   </head>
 
   <body class="contacts">
@@ -106,21 +113,14 @@
       </div>
 
       <section class="contacts-map container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2472.5824749653157!2d39.14334907617649!3d51.70408529631643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x413b28dc78ad2611%3A0xc42b2af612a76a90!2z0YPQuy4g0JLQu9Cw0LTQuNC80LjRgNCwINCd0LXQstGB0LrQvtCz0L4sIDI1LzUsINCS0L7RgNC-0L3QtdC2LCDQktC-0YDQvtC90LXQttGB0LrQsNGPINC-0LHQuy4sINCg0L7RgdGB0LjRjywgMzk0MDg4!5e0!3m2!1sru!2sat!4v1750812711173!5m2!1sru!2sat"
-          width="600"
-          height="450"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <div id="map2gis" style="width: 100%; height: 400px"></div>
       </section>
     </main>
 
     <div id="footer"></div>
     <div id="floating-ui"></div>
     <script src="js/copysection.js"></script>
+    <script src="js/loader.js"></script>
     <script type="module" src="js/main.js"></script>
   </body>
 </html>
