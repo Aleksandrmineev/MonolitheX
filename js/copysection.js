@@ -1,4 +1,4 @@
-// Универсальная функция загрузки внешнего HTML-файла
+// Универсальная функция загрузки внешнего HTML‑файла
 function loadHTML(id, file) {
   return fetch(file)
     .then((res) => res.text())
@@ -12,10 +12,8 @@ function loadHTML(id, file) {
    HEADER & CITY SELECTOR
    ====================== */
 function initHeader() {
-  // Бургер‑меню
   const burger = document.querySelector(".header__burger");
   const nav = document.querySelector(".header__nav");
-
   if (burger && nav) {
     burger.addEventListener("click", () => {
       nav.classList.toggle("is-open");
@@ -23,7 +21,6 @@ function initHeader() {
     });
   }
 
-  // Меню «Услуги»
   const servicesLink = document.querySelector(
     ".header__menu-item--has-popup > a"
   );
@@ -95,11 +92,10 @@ function initCitySelector() {
     });
   }
 
-  // «Ваш город/Город»
-  function updateTownText() {
+  const updateTownText = () => {
     if (label)
       label.textContent = window.innerWidth <= 550 ? "Город:" : "Ваш город:";
-  }
+  };
   window.addEventListener("resize", updateTownText);
   updateTownText();
 }
@@ -116,9 +112,8 @@ function hideOverflowGridItems(gridSelector, btnSelector) {
   const firstRowTop = cards[0].getBoundingClientRect().top;
 
   cards.forEach((card) => {
-    if (card.getBoundingClientRect().top > firstRowTop + 5) {
+    if (card.getBoundingClientRect().top > firstRowTop + 5)
       card.dataset.hidden = "true";
-    }
   });
 
   btn.addEventListener("click", () => {
@@ -195,42 +190,9 @@ function initFloatingUI() {
   });
 }
 
-/* =====================
-   ВСТАВКА шаблона формы
-   ===================== */
-function insertFormsFromTemplate() {
-  const template = document.getElementById("form-template");
-  if (!template) return;
-
-  const clones = template.content;
-
-  document
-    .querySelectorAll("#insert-form-section-1, #insert-form-section-2")
-    .forEach((target) => {
-      target.appendChild(clones.cloneNode(true));
-    });
-
-  // В .form-placeholder
-  document
-    .querySelectorAll('.form-placeholder[data-form="inline"]')
-    .forEach((ph) => {
-      ph.replaceWith(clones.cloneNode(true));
-    });
-
-  // Перед предпоследним H2 в статье
-  const article = document.querySelector(".article__main");
-  if (article) {
-    const h2s = article.querySelectorAll("h2");
-    if (h2s.length > 1) {
-      article.insertBefore(clones.cloneNode(true), h2s[h2s.length - 2]);
-    }
-  }
-}
-
 /* =========================================================
-   ИНИЦИАЛИЗАЦИЯ — выполняется сразу, т.к. скрипт подключён defer
+   ИНИЦИАЛИЗАЦИЯ — скрипт подключён defer, поэтому DOM уже готов
    ========================================================= */
-// 1. Загружаем частичные HTML‑файлы
 Promise.all([
   loadHTML("header", "header.html"),
   loadHTML("footer", "footer.html"),
@@ -242,6 +204,5 @@ Promise.all([
   initFloatingUI();
 });
 
-// 2. Остальное, не зависящее от async‑частей
+// Функции, не зависящие от асинхронной подгрузки частей
 hideOverflowGridItems(".article-projects__grid", ".article-projects__more");
-insertFormsFromTemplate();

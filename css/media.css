@@ -388,6 +388,12 @@
   .blog-single .header__location-current {
     color: var(--clr-accent);
   }
+
+  .calc-section__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
 @media (width <= 720px) {

@@ -1,65 +1,92 @@
-// Получаем элементы
-const workType = document.getElementById('workType');
-const sheetsRange = document.getElementById('sheetsRange');
-const sheetsInput = document.getElementById('sheetsInput');
-const tonsRange = document.getElementById('tonsRange');
-const tonsInput = document.getElementById('tonsInput');
-const submitBtn = document.getElementById('calcSubmit');
-const resultBlock = document.getElementById('calcResult');
+// ======== Элементы ========
+const workType = document.getElementById("workType");
+const areaRange = document.getElementById("areaRange");
+const areaInput = document.getElementById("areaInput");
+const submitBtn = document.getElementById("calcSubmit");
+const resultBlock = document.getElementById("calcResult");
+const resultFormula = resultBlock.querySelector(".calc-result__formula");
+const resultTotal = resultBlock.querySelector(".calc-result__total");
+const resultNote = resultBlock.querySelector(".calc-result__note");
 
-// Проверяем, есть ли все элементы перед запуском логики
-if (
-  workType &&
-  sheetsRange &&
-  sheetsInput &&
-  tonsRange &&
-  tonsInput &&
-  submitBtn &&
-  resultBlock
-) {
-  const resultFormula = resultBlock.querySelector('.calc-result__formula');
-  const resultTotal = document.getElementById('calcTotal');
+// ======== Ставки за 1 м² ========
+const PRICES = {
+  km: 150, // КМ
+  krpd: 300, // КР для ПД
+  krrd: 400, // КР для РД
+  kj: 250, // КЖ
+  ar: 350, // АР
+};
 
-  const PRICES = {
-    km: { ton: 500, sheet: 0, label: 'КМ' },
-    kmd: { ton: 500, sheet: 300, label: 'КМД' },
-    ar: { ton: 0, sheet: 550, label: 'АР' },
-  };
-
-  const MIN_TOTAL = 15000;
-
-  // Синхронизация range и input
-  function syncRangeAndInput(range, input) {
-    range.addEventListener('input', () => (input.value = range.value));
-    input.addEventListener('input', () => (range.value = input.value));
-  }
-
-  syncRangeAndInput(sheetsRange, sheetsInput);
-  syncRangeAndInput(tonsRange, tonsInput);
-
-  // Округление до 1000 вверх
-  function roundUpToThousand(value) {
-    return Math.ceil(value / 1000) * 1000;
-  }
-
-  // Основной расчёт
-  function calculate() {
-    const type = workType.value;
-    const tons = parseFloat(tonsInput.value) || 0;
-    const sheets = parseFloat(sheetsInput.value) || 0;
-
-    const { ton, sheet } = PRICES[type];
-
-    let total = tons * ton + sheets * sheet;
-    total = total < MIN_TOTAL ? MIN_TOTAL : roundUpToThousand(total);
-
-    // Обновление UI
-    resultFormula.textContent = `Формула: (${tons} × ${ton}₽) + (${sheets} × ${sheet}₽)`;
-    resultTotal.textContent = `${total.toLocaleString('ru-RU')} руб.`;
-
-    resultBlock.classList.add('is-visible');
-  }
-
-  // Обработчик кнопки
-  submitBtn.addEventListener('click', calculate);
+// ======== Синхронизация бегунка и текстового поля ========
+function syncRangeAndInput(range, input) {
+  range.addEventListener("input", () => (input.value = range.value));
+  input.addEventListener("input", () => {
+    let v = Number(input.value);
+    if (isNaN(v) || v < +range.min) v = range.min;
+    if (v > +range.max) v = range.max;
+    range.value = input.value = v;
+  });
 }
+syncRangeAndInput(areaRange, areaInput);
+
+// ======== Расчёт ========
+function calculate() {
+  const type = workType.value;
+  const area = Math.max(0, Math.floor(Number(areaInput.value)));
+  const rate = PRICES[type] || 0;
+  const total = area * rate;
+
+  // Обновляем UI
+  resultFormula.textContent = `Формула: ${area} м² × ${rate} ₽`;
+  resultTotal.textContent = `Итоговая стоимость: ${total.toLocaleString(
+    "ru-RU"
+  )} ₽`;
+  resultNote.textContent =
+    "Калькулятор даёт базовую оценку, точная цена зависит от проекта";
+
+  resultBlock.classList.add("is-visible");
+}
+
+// ======== Навешиваем обработчик ========
+submitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  calculate();
+});
+
+// ====== Deep link + fallback logic ======
+(function () {
+  const message = encodeURIComponent(
+    "Добрый день, я с сайта MonolitheX, хотел бы уточнить стоимость проектирования."
+  );
+  const waPhone = "+4368181289405"; // номер в формате E.164
+  const tgUser = "sa_ttt"; // ник менеджера в Telegram
+
+  const waBtn = document.getElementById("waLink");
+  const tgBtn = document.getElementById("tgLink");
+
+  function openWhatsApp(e) {
+    e.preventDefault();
+    // URI-scheme для WhatsApp
+    const uriApp = `whatsapp://send?phone=${waPhone}&text=${message}`;
+    // Web-fallback
+    const uriWeb = `https://api.whatsapp.com/send?phone=${waPhone}&text=${message}`;
+
+    // Пробуем сначала схему, через 500 ms переходим на web
+    window.location.href = uriApp;
+    setTimeout(() => (window.location.href = uriWeb), 500);
+  }
+
+  function openTelegram(e) {
+    e.preventDefault();
+    // URI-scheme для Telegram
+    const uriApp = `tg://resolve?domain=${tgUser}&text=${message}`;
+    // Web-fallback
+    const uriWeb = `https://t.me/${tgUser}?text=${message}`;
+
+    window.location.href = uriApp;
+    setTimeout(() => (window.location.href = uriWeb), 500);
+  }
+
+  waBtn.addEventListener("click", openWhatsApp);
+  tgBtn.addEventListener("click", openTelegram);
+})();

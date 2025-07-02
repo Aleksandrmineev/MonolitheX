@@ -192,7 +192,7 @@
   background-color: var(--clr-bg);
   visibility: hidden;
   gap: 0;
-  grid-template-areas: 'popup subpopup';
+  grid-template-areas: "popup subpopup";
 }
 
 .header__popup {
@@ -415,4 +415,23 @@
   width: 24px;
   height: 24px;
   transform: rotate(270deg);
+}
+
+/* Стиль всплывающего “Скопировано!” */
+.email-tooltip {
+  position: fixed;
+  background: #18b75c;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+  z-index: 10; /* ← поверх шапки */
+}
+.email-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

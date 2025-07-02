@@ -1,57 +1,58 @@
-export function initHeaderMenu() {
+// js/header.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  // —————— Подменю “Услуги” ——————
   const servicesMenuLink = document.querySelector(
-    '.header__menu-item--has-popup > a'
+    ".header__menu-item--has-popup > a"
   );
-  const popupWrapper = document.querySelector('.header__popup-wrapper');
+  const popupWrapper = document.querySelector(".header__popup-wrapper");
   const subpopupTrigger = popupWrapper?.querySelector(
-    '.header__popup-item--has-subpopup'
+    ".header__popup-item--has-subpopup"
   );
-  const subpopup = popupWrapper?.querySelector('.header__subpopup');
+  const subpopup = popupWrapper?.querySelector(".header__subpopup");
 
   if (servicesMenuLink && popupWrapper && subpopup) {
-    servicesMenuLink.addEventListener('click', function (e) {
+    servicesMenuLink.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
-      popupWrapper.classList.toggle('is-open');
-      subpopup.classList.remove('is-active');
+      popupWrapper.classList.toggle("is-open");
+      subpopup.classList.remove("is-active");
     });
 
-    if (subpopupTrigger) {
-      subpopupTrigger.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        subpopup.classList.toggle('is-active');
-      });
-    }
+    subpopupTrigger?.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      subpopup.classList.toggle("is-active");
+    });
 
-    document.addEventListener('click', function (e) {
+    document.addEventListener("click", (e) => {
       if (
         !popupWrapper.contains(e.target) &&
         !servicesMenuLink.contains(e.target)
       ) {
-        popupWrapper.classList.remove('is-open');
-        subpopup.classList.remove('is-active');
+        popupWrapper.classList.remove("is-open");
+        subpopup.classList.remove("is-active");
       }
     });
 
-    const popupLinks = popupWrapper.querySelectorAll('a');
-    popupLinks.forEach(function (link) {
-      if (!link.classList.contains('header__popup-item--has-subpopup')) {
-        link.addEventListener('click', function () {
-          popupWrapper.classList.remove('is-open');
-          subpopup.classList.remove('is-active');
+    popupWrapper.querySelectorAll("a").forEach((link) => {
+      if (!link.classList.contains("header__popup-item--has-subpopup")) {
+        link.addEventListener("click", () => {
+          popupWrapper.classList.remove("is-open");
+          subpopup.classList.remove("is-active");
         });
       }
     });
   }
 
-  const burger = document.querySelector('.header__burger');
-  const nav = document.querySelector('.header__nav');
+  // —————— Бургер-меню ——————
+  const burger = document.querySelector(".header__burger");
+  const nav = document.querySelector(".header__nav");
 
   if (burger && nav) {
-    burger.addEventListener('click', () => {
-      nav.classList.toggle('is-open');
-      burger.classList.toggle('is-active');
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("is-open");
+      burger.classList.toggle("is-active");
     });
   }
-}
+});
