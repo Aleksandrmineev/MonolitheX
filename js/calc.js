@@ -66,25 +66,26 @@ submitBtn.addEventListener("click", (e) => {
 
   function openWhatsApp(e) {
     e.preventDefault();
-    // URI-scheme для WhatsApp
     const uriApp = `whatsapp://send?phone=${waPhone}&text=${message}`;
-    // Web-fallback
     const uriWeb = `https://api.whatsapp.com/send?phone=${waPhone}&text=${message}`;
 
-    // Пробуем сначала схему, через 500 ms переходим на web
-    window.location.href = uriApp;
-    setTimeout(() => (window.location.href = uriWeb), 500);
+    // Если это мобильное устройство, пробуем открыть приложение
+    if (/Android|iPhone|iPad|iPod/.test(navigator.userAgent)) {
+      window.location.href = uriApp;
+    }
+    // Всегда открываем web-фоллбек в новой вкладке
+    window.open(uriWeb, "_blank");
   }
 
   function openTelegram(e) {
     e.preventDefault();
-    // URI-scheme для Telegram
     const uriApp = `tg://resolve?domain=${tgUser}&text=${message}`;
-    // Web-fallback
     const uriWeb = `https://t.me/${tgUser}?text=${message}`;
 
-    window.location.href = uriApp;
-    setTimeout(() => (window.location.href = uriWeb), 500);
+    if (/Android|iPhone|iPad|iPod/.test(navigator.userAgent)) {
+      window.location.href = uriApp;
+    }
+    window.open(uriWeb, "_blank");
   }
 
   waBtn.addEventListener("click", openWhatsApp);
