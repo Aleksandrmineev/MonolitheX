@@ -47,16 +47,6 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/style.css" />
-
-    <!-- Галерея -->
-    <link rel="stylesheet" href="css/glightbox.min.css" />
-
-    <!-- 2гис -->
-    <link
-      rel="stylesheet"
-      href="https://maps.api.2gis.ru/2.0/loader/css/2gis.css"
-    />
-    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
   </head>
 
   <body class="contacts">
@@ -113,14 +103,44 @@
       </div>
 
       <section class="contacts-map container">
-        <div id="map2gis" style="width: 100%; height: 400px"></div>
+        <!-- Карта 2ГИС с организацией Монолитекс -->
+
+        <script
+          src="https://widgets.2gis.com/js/DGWidgetLoader.js"
+          charset="utf-8"
+        ></script>
+        <script>
+          new DGWidgetLoader({
+            container: "dg-map",
+            width: "100%",
+            height: 600,
+            borderColor: "#a3a3a3",
+            pos: {
+              lat: 51.7162677554217,
+              lon: 39.155922532081604,
+              zoom: 17,
+            },
+            opt: {
+              city: "voronezh",
+            },
+            org: [
+              {
+                id: "70000001100840686", // ID организации Монолитекс
+              },
+            ],
+          });
+        </script>
+
+        <noscript style="color: #c00; font-size: 16px; font-weight: bold">
+          Виджет карты использует JavaScript. Включите его в настройках вашего
+          браузера.
+        </noscript>
       </section>
     </main>
 
     <div id="footer"></div>
     <div id="floating-ui"></div>
     <script src="js/copysection.js"></script>
-    <script src="js/loader.js"></script>
     <script type="module" src="js/main.js"></script>
   </body>
 </html>

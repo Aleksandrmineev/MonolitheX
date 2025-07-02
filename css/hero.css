@@ -55,3 +55,18 @@
   width: 1300px;
   height: 1300px;
 }
+
+.hero__leiter p {
+  position: absolute;
+  font-size: var(--fs-h4);
+  font-family: var(--font-family-alt);
+  margin: 20px;
+  padding: 20px;
+  border-radius: var(--radius-main);
+  top: 150px;
+  z-index: -1;
+  max-width: 300px;
+  height: auto;
+  font-weight: 600;
+  text-transform: uppercase;
+}
