@@ -359,7 +359,7 @@
 .calc-block__result {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   max-height: 0;
   overflow: hidden;
@@ -373,6 +373,7 @@
   text-transform: uppercase;
   padding: 20px 0;
   font-weight: 600;
+  font-size: var(--fs-h3);
 }
 
 .calc-block__result.is-visible {
@@ -395,11 +396,17 @@
 .calc-result__total {
   color: var(--clr-text-main);
   font-family: var(--font-family-base);
-  font-size: var(--fs-body);
+  font-size: var(--fs-h2);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.calc-result__formula {
+  display: none;
 }
 
 .calc-result__total {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* Примечание под итогом */

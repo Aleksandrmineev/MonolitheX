@@ -1,4 +1,31 @@
-// ======== Элементы ========
+/* ====== Счётчик чисел ======
+ * element   — DOM-элемент, куда пишем
+ * start     — от какого числа
+ * end       — до какого числа
+ * duration  — длительность в мс (по умолчанию 600)
+ */
+function animateValue(element, start, end, duration = 600) {
+  const range = end - start;
+  const startTs = performance.now();
+
+  function step(now) {
+    const progress = Math.min((now - startTs) / duration, 1); // 0-1
+    const value = Math.round(start + range * progress);
+
+    element.textContent = `Итоговая стоимость: ${value.toLocaleString(
+      "ru-RU"
+    )} ₽`;
+
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+/* =========================================================
+ *  calc.js ― калькулятор + мессенджер-кнопки
+ * =======================================================*/
+
+/* ========= Элементы калькулятора ========= */
 const workType = document.getElementById("workType");
 const areaRange = document.getElementById("areaRange");
 const areaInput = document.getElementById("areaInput");
@@ -8,7 +35,7 @@ const resultFormula = resultBlock.querySelector(".calc-result__formula");
 const resultTotal = resultBlock.querySelector(".calc-result__total");
 const resultNote = resultBlock.querySelector(".calc-result__note");
 
-// ======== Ставки за 1 м² ========
+/* ========= Ставки за 1 м² ========= */
 const PRICES = {
   km: 150, // КМ
   krpd: 300, // КР для ПД
@@ -17,77 +44,79 @@ const PRICES = {
   ar: 350, // АР
 };
 
-// ======== Синхронизация бегунка и текстового поля ========
+/* ========= Синхронизация бегунка и инпута ========= */
 function syncRangeAndInput(range, input) {
   range.addEventListener("input", () => (input.value = range.value));
+
   input.addEventListener("input", () => {
     let v = Number(input.value);
-    if (isNaN(v) || v < +range.min) v = range.min;
-    if (v > +range.max) v = range.max;
+    if (isNaN(v) || v < +range.min) v = +range.min;
+    if (v > +range.max) v = +range.max;
     range.value = input.value = v;
   });
 }
 syncRangeAndInput(areaRange, areaInput);
 
-// ======== Расчёт ========
+/* ========= Расчёт стоимости ========= */
 function calculate() {
   const type = workType.value;
   const area = Math.max(0, Math.floor(Number(areaInput.value)));
   const rate = PRICES[type] || 0;
   const total = area * rate;
 
-  // Обновляем UI
   resultFormula.textContent = `Формула: ${area} м² × ${rate} ₽`;
-  resultTotal.textContent = `Итоговая стоимость: ${total.toLocaleString(
-    "ru-RU"
-  )} ₽`;
+
+  /* --- вместо мгновенной смены — анимированный счётчик --- */
+  const currentText = resultTotal.textContent.match(/\d[\d\s]*\d/);
+  const previous = currentText ? Number(currentText[0].replace(/\s/g, "")) : 0;
+  animateValue(resultTotal, previous, total); // ← тут магия
+
   resultNote.textContent =
     "Калькулятор даёт базовую оценку, точная цена зависит от проекта";
-
   resultBlock.classList.add("is-visible");
 }
 
-// ======== Навешиваем обработчик ========
+/* ========= Кнопка «Рассчитать» ========= */
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   calculate();
 });
 
-// ====== Deep link + fallback logic ======
-(function () {
-  const message = encodeURIComponent(
-    "Добрый день, я с сайта MonolitheX, хотел бы уточнить стоимость проектирования."
-  );
-  const waPhone = "+4368181289405"; // номер в формате E.164
-  const tgUser = "sa_ttt"; // ник менеджера в Telegram
+/* =========================================================
+ *  Deep-link к WhatsApp / Telegram (один для всех кнопок)
+ * =======================================================*/
 
-  const waBtn = document.getElementById("waLink");
-  const tgBtn = document.getElementById("tgLink");
+/* — настройки — */
+const MSG = encodeURIComponent(
+  "Добрый день! Пишу с сайта MonolitheX, хотел бы уточнить стоимость проектирования."
+);
+const WA_PHONE = "+79272092064"; // телефон WhatsApp (E.164)
+const TG_USER = "czaryovv"; // ник Telegram (без @)
 
-  function openWhatsApp(e) {
-    e.preventDefault();
-    const uriApp = `whatsapp://send?phone=${waPhone}&text=${message}`;
-    const uriWeb = `https://api.whatsapp.com/send?phone=${waPhone}&text=${message}`;
+/* — вспомогательные функции — */
+const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    // Если это мобильное устройство, пробуем открыть приложение
-    if (/Android|iPhone|iPad|iPod/.test(navigator.userAgent)) {
-      window.location.href = uriApp;
-    }
-    // Всегда открываем web-фоллбек в новой вкладке
-    window.open(uriWeb, "_blank");
+function openWithFallback(appURI, webURI) {
+  if (isMobile) location.href = appURI; // пробуем открыть приложение
+  window.open(webURI, "_blank"); // и всегда открываем веб-версию
+}
+
+/* — делегированный обработчик кликов — */
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-wa],[data-tg],#waLink,#tgLink");
+  if (!btn) return; // клик не по нужной кнопке
+
+  e.preventDefault();
+
+  if (btn.hasAttribute("data-wa") || btn.id === "waLink") {
+    openWithFallback(
+      `whatsapp://send?phone=${WA_PHONE}&text=${MSG}`,
+      `https://api.whatsapp.com/send?phone=${WA_PHONE}&text=${MSG}`
+    );
+  } else {
+    openWithFallback(
+      `tg://resolve?domain=${TG_USER}&text=${MSG}`,
+      `https://t.me/${TG_USER}?text=${MSG}`
+    );
   }
-
-  function openTelegram(e) {
-    e.preventDefault();
-    const uriApp = `tg://resolve?domain=${tgUser}&text=${message}`;
-    const uriWeb = `https://t.me/${tgUser}?text=${message}`;
-
-    if (/Android|iPhone|iPad|iPod/.test(navigator.userAgent)) {
-      window.location.href = uriApp;
-    }
-    window.open(uriWeb, "_blank");
-  }
-
-  waBtn.addEventListener("click", openWhatsApp);
-  tgBtn.addEventListener("click", openTelegram);
-})();
+});
